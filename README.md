@@ -18,7 +18,9 @@ The user interface is shown below:
     - Unordered memory accesses are highlighted in red.
 3. Source code for second thread involved in data race.
 4. Legend.
+    - Additional information about visuals.
 5. Navigation buttons.
+    - Configures graph layout to show relevant racy nodes.
 6. Stack information.
 
 ## Usage
