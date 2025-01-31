@@ -1,0 +1,18 @@
+Taskracer detects TSAN runtime, carrying out race detection using DPST
+Computation Graph recording enabled
+[implicit_task] initial task begin 
+[parallel_begin] file: /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/nested_parallel.cpp, line: 13, col: 5 
+Level 1: number of threads in the team - 2
+[parallel_begin] file: /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/nested_parallel.cpp, line: 16, col: 9 
+[parallel_begin] file: /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/nested_parallel.cpp, line: 16, col: 9 
+Level 2: number of threads in the team - 2
+[parallel_end] current node is 7, requested parallelsim is 2, Level 2: number of threads in the team - 2
+[parallel_end] current node is 8, requested parallelsim is 2, [parallel_end] file: /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/nested_parallel.cpp, line: 16, col: 9 
+[parallel_end] file: /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/nested_parallel.cpp, line: 16, col: 9 
+[parallel_end] current node is 2, requested parallelsim is 2, [parallel_end] file: /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/nested_parallel.cpp, line: 13, col: 5 
+[implicit_task] initial task end, parallel region is (nil), current step is 25 
+JSON data written to 'data/rawgraphml.json'
+
+ 
+ConcurrencyVector constructor, capacity is 200000000 
+Example of tsan interface (__tsan_print) 

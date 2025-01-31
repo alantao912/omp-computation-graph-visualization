@@ -1,0 +1,70 @@
+Taskracer detects TSAN runtime, carrying out race detection using DPST
+Computation Graph recording enabled
+[implicit_task] initial task begin 
+[parallel_begin] file: /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/taskdep-mutex-no.cpp, line: 7, col: 3 
+[task_create] file: /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/taskdep-mutex-no.cpp, line: 10, col: 5 
+[task_create] file: /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/taskdep-mutex-no.cpp, line: 12, col: 5 
+[task_create] file: /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/taskdep-mutex-no.cpp, line: 14, col: 5 
+[task_create] file: /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/taskdep-mutex-no.cpp, line: 16, col: 5 
+[task_create] file: /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/taskdep-mutex-no.cpp, line: 18, col: 5 
+[task_create] file: /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/taskdep-mutex-no.cpp, line: 20, col: 5 
+[task_schedule] next task starting node 15 
+[task_schedule] next task starting node 13 
+[task_schedule] next task starting node 11 
+[task_schedule] previous task end node 15 @@@ [task_schedule] next task starting node 23 
+[task_schedule] previous task end node 11 @@@ [task_schedule] previous task end node 13 @@@ [task_schedule] next task starting node 27 
+[task_schedule] next task starting node 25 
+[task_schedule] next task starting node 19 
+[task_schedule] previous task end node 19 @@@ [task_schedule] next task starting node 26 
+[task_schedule] next task starting node 17 
+[task_schedule] previous task end node 17 @@@ [task_schedule] next task starting node 27 
+[task_schedule] next task starting node 21 
+[task_schedule] previous task end node 21 @@@ [task_schedule] next task starting node 30 
+[parallel_end] current node is 2, requested parallelsim is 8, [parallel_end] file: /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/taskdep-mutex-no.cpp, line: 7, col: 3 
+6
+[implicit_task] initial task end, parallel region is (nil), current step is 39 
+filePath /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/taskdep-mutex-no.cpp 
+JSON data written to 'data/rawgraphml.json'
+
+ 
+ConcurrencyVector constructor, capacity is 200000000 
+Example of tsan interface (__tsan_print) 
+LLVMSymbolizer: error reading file: No such file or directory
+==================
+WARNING: ThreadSanitizer: data race (pid=16255)
+  Read of size 4 at 0x7ffd0ecaf974 by thread T3:
+    #0 .omp_outlined..7 /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/taskdep-mutex-no.cpp:19:12 (taskdep-mutex-no+0xd414b)
+
+  Previous write of size 4 at 0x7ffd0ecaf974 by main thread:
+    #0 .omp_outlined..3 /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/taskdep-mutex-no.cpp:15:9 (taskdep-mutex-no+0xd3fb0)
+
+  Location is stack of main thread.
+
+  Location is global '??' at 0x7ffd0ec91000 ([stack]+0x1e974)
+
+  Thread T3 (tid=16272, running) created by main thread at:
+    #0 pthread_create /home/fjin/newllvm/llvm-project/compiler-rt/lib/tsan/rtl/tsan_interceptors_posix.cpp:1022:3 (taskdep-mutex-no+0x4e5cd)
+    #1 __kmp_create_worker <null> (libomp.so+0x98536)
+
+SUMMARY: ThreadSanitizer: data race /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/taskdep-mutex-no.cpp:19:12 in .omp_outlined..7
+==================
+Racy access at /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/taskdep-mutex-no.cpp:19
+Racy access at /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/taskdep-mutex-no.cpp:17
+ThreadSanitizer:DEADLYSIGNAL
+==16255==ERROR: ThreadSanitizer: SEGV on unknown address 0x000000000007 (pc 0x7f49fd3dc5e3 bp 0x7b0800000108 sp 0x7ffd0ecaf3d0 T16255)
+==16255==The signal is caused by a READ memory access.
+==16255==Hint: address points to the zero page.
+    #0 nlohmann::json_abi_v3_11_3::basic_json<std::__1::map, std::__1::vector, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>, bool, long, unsigned long, double, std::__1::allocator, nlohmann::json_abi_v3_11_3::adl_serializer, std::__1::vector<unsigned char, std::__1::allocator<unsigned char>>, void>::json_value::destroy(nlohmann::json_abi_v3_11_3::detail::value_t) <null> (libtaskracer.so+0x1a5e3)
+    #1 print_graph_json() <null> (libtaskracer.so+0x1049b)
+    #2 ompt_tsan_finalize(ompt_data_t*) ompt-tsan.cpp (libtaskracer.so+0xefcc)
+    #3 ompt_fini <null> (libomp.so+0xb6fd7)
+    #4 __kmp_internal_end_library <null> (libomp.so+0x3d6f3)
+    #5 <null> <null> (ld-linux-x86-64.so.2+0x10d12) (BuildId: 9ea8014cf02021a29e57aa3e0512e9bb6e30541d)
+    #6 __run_exit_handlers /build/glibc-CVJwZb/glibc-2.27/stdlib/exit.c:108 (libc.so.6+0x43030) (BuildId: f7307432a8b162377e77a182b6cc2e53d771ec4b)
+    #7 exit /build/glibc-CVJwZb/glibc-2.27/stdlib/exit.c:139 (libc.so.6+0x43129) (BuildId: f7307432a8b162377e77a182b6cc2e53d771ec4b)
+    #8 __libc_start_main /build/glibc-CVJwZb/glibc-2.27/csu/../csu/libc-start.c:344 (libc.so.6+0x21c8d) (BuildId: f7307432a8b162377e77a182b6cc2e53d771ec4b)
+    #9 _start <null> (taskdep-mutex-no+0x20dd9)
+
+ThreadSanitizer can not provide additional info.
+SUMMARY: ThreadSanitizer: SEGV (/home/fjin/playground/llvm-install/arbalest2/lib/libtaskracer.so+0x1a5e3) in nlohmann::json_abi_v3_11_3::basic_json<std::__1::map, std::__1::vector, std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char>>, bool, long, unsigned long, double, std::__1::allocator, nlohmann::json_abi_v3_11_3::adl_serializer, std::__1::vector<unsigned char, std::__1::allocator<unsigned char>>, void>::json_value::destroy(nlohmann::json_abi_v3_11_3::detail::value_t)
+==16255==ABORTING

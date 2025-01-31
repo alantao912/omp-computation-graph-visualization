@@ -1,0 +1,19 @@
+Taskracer detects TSAN runtime, carrying out race detection using DPST
+Computation Graph recording enabled
+[implicit_task] initial task begin 
+[parallel_begin] file: /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/taskwait-yes.cpp, line: 10, col: 3 
+[task_create] file: /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/taskwait-yes.cpp, line: 21, col: 7 
+[task_schedule] next task starting node 7 
+[task_create] file: /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/taskwait-yes.cpp, line: 23, col: 8 
+[task_schedule] previous task end node 10 @@@ [task_schedule] next task starting node 8 
+[task_schedule] next task starting node 9 
+[task_schedule] previous task end node 9 @@@ [task_schedule] next task starting node 12 
+[parallel_end] current node is 2, requested parallelsim is 2, [parallel_end] file: /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/taskwait-yes.cpp, line: 10, col: 3 
+sum = 1
+[implicit_task] initial task end, parallel region is (nil), current step is 16 
+filePath /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/taskwait-yes.cpp 
+JSON data written to 'data/rawgraphml.json'
+
+ 
+ConcurrencyVector constructor, capacity is 200000000 
+Example of tsan interface (__tsan_print) 

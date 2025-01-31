@@ -1,0 +1,39 @@
+Taskracer detects TSAN runtime, carrying out race detection using DPST
+Computation Graph recording enabled
+[implicit_task] initial task begin 
+i address 0x7fffe6726c08, j address 0x7fffe6726c04 
+[parallel_begin] file: /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/taskdep.cpp, line: 11, col: 2 
+[task_create] file: /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/taskdep.cpp, line: 15, col: 4 
+[task_create] file: /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/taskdep.cpp, line: 20, col: 4 
+[task_schedule] next task starting node 5 
+[task_schedule] previous task end node 5 @@@ [task_schedule] next task starting node 9 
+[task_schedule] next task starting node 7 
+[task_schedule] previous task end node 7 @@@ [task_schedule] next task starting node 10 
+[parallel_end] current node is 2, requested parallelsim is 4, [parallel_end] file: /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/taskdep.cpp, line: 11, col: 2 
+[implicit_task] initial task end, parallel region is (nil), current step is 11 
+JSON data written to 'data/rawgraphml.json'
+
+ 
+ConcurrencyVector constructor, capacity is 200000000 
+Example of tsan interface (__tsan_print) 
+LLVMSymbolizer: error reading file: No such file or directory
+==================
+WARNING: ThreadSanitizer: data race (pid=31073)
+  Write of size 4 at 0x7fffe6726c08 by thread T1:
+    #0 .omp_outlined..1 /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/taskdep.cpp:22:7 (taskdep+0xd3c40)
+
+  Previous write of size 4 at 0x7fffe6726c08 by main thread:
+    #0 .omp_outlined. /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/taskdep.cpp:17:7 (taskdep+0xd3b90)
+
+  Location is stack of main thread.
+
+  Location is global '??' at 0x7fffe6707000 ([stack]+0x1fc08)
+
+  Thread T1 (tid=31084, running) created by main thread at:
+    #0 pthread_create /home/fjin/newllvm/llvm-project/compiler-rt/lib/tsan/rtl/tsan_interceptors_posix.cpp:1022:3 (taskdep+0x4e5cd)
+    #1 __kmp_create_worker <null> (libomp.so+0x98536)
+
+SUMMARY: ThreadSanitizer: data race /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/taskdep.cpp:22:7 in .omp_outlined..1
+==================
+Racy access at /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/taskdep.cpp:22
+ThreadSanitizer: reported 1 warnings

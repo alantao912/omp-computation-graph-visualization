@@ -1,0 +1,77 @@
+{
+    "directed": true,
+    "multigraph": false,
+    "graph": {
+        "node_default": {},
+        "edge_default": {}
+    },
+    "nodes": [
+        {
+            "end_event": "task_create",
+            "has_race": false,
+            "ontarget": false,
+            "stack": "file: /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/taskwait-merge-yes.cpp, line: 8, col: 3",
+            "vertex_id": 1,
+            "id": "n1",
+            "active": true,
+            "hidden": false
+        },
+        {
+            "end_event": "task_schedule",
+            "has_race": false,
+            "ontarget": false,
+            "vertex_id": 2,
+            "id": "n2",
+            "active": true,
+            "hidden": false
+        },
+        {
+            "end_event": "taskwait_end",
+            "has_race": false,
+            "ontarget": false,
+            "vertex_id": 3,
+            "id": "n3",
+            "active": true,
+            "hidden": false
+        },
+        {
+            "has_race": false,
+            "ontarget": false,
+            "vertex_id": 4,
+            "id": "n4",
+            "active": true,
+            "hidden": false
+        }
+    ],
+    "links": [
+        {
+            "edge_type": "FORK_E",
+            "id": "e0",
+            "source": "n1",
+            "target": "n2",
+            "hidden": false
+        },
+        {
+            "edge_type": "CONT",
+            "id": "e1",
+            "source": "n1",
+            "target": "n3",
+            "hidden": false
+        },
+        {
+            "edge_type": "JOIN",
+            "id": "e2",
+            "source": "n2",
+            "target": "n4",
+            "hidden": false
+        },
+        {
+            "edge_type": "CONT",
+            "id": "e3",
+            "source": "n3",
+            "target": "n4",
+            "hidden": false
+        }
+    ],
+    "target": []
+}

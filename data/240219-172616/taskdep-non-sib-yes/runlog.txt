@@ -1,0 +1,25 @@
+Taskracer detects TSAN runtime, carrying out race detection using DPST
+Computation Graph recording enabled
+[implicit_task] initial task begin 
+[parallel_begin] file: /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/taskdep-non-sib-yes.cpp, line: 7, col: 1 
+[task_create] file: /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/taskdep-non-sib-yes.cpp, line: 10, col: 1 
+[task_create] file: /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/taskdep-non-sib-yes.cpp, line: 16, col: 1 
+[task_schedule] next task starting node 11 
+[task_create] file: /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/taskdep-non-sib-yes.cpp, line: 12, col: 1 
+[task_schedule] previous task end node 24 @@@ [task_schedule] next task starting node 23 
+[task_schedule] next task starting node 15 
+[task_schedule] previous task end node 23 @@@ [task_schedule] next task starting node 20 
+[task_schedule] next task starting node 13 
+[task_create] file: /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/taskdep-non-sib-yes.cpp, line: 18, col: 1 
+[task_schedule] previous task end node 26 @@@ [task_schedule] next task starting node 18 
+[task_schedule] next task starting node 25 
+[task_schedule] previous task end node 25 @@@ [task_schedule] next task starting node 22 
+[parallel_end] current node is 2, requested parallelsim is 8, [parallel_end] file: /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/taskdep-non-sib-yes.cpp, line: 7, col: 1 
+a=2
+[implicit_task] initial task end, parallel region is (nil), current step is 35 
+JSON data written to 'data/rawgraphml.json'
+
+ 
+ConcurrencyVector constructor, capacity is 200000000 
+Example of tsan interface (__tsan_print) 
+Racy access at /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/taskdep-non-sib-yes.cpp:19

@@ -1,0 +1,407 @@
+{
+    "edges": [
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 1,
+            "target": 2
+        },
+        {
+            "edge_type": 1,
+            "hidden": 0,
+            "source": 1,
+            "target": 3
+        },
+        {
+            "edge_type": 1,
+            "hidden": 0,
+            "source": 1,
+            "target": 5
+        },
+        {
+            "edge_type": 1,
+            "hidden": 0,
+            "source": 1,
+            "target": 4
+        },
+        {
+            "edge_type": 1,
+            "hidden": 0,
+            "source": 1,
+            "target": 6
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 2,
+            "target": 21
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 3,
+            "target": 14
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 4,
+            "target": 16
+        },
+        {
+            "edge_type": 2,
+            "hidden": 0,
+            "source": 5,
+            "target": 7
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 5,
+            "target": 8
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 6,
+            "target": 15
+        },
+        {
+            "edge_type": 4,
+            "hidden": 0,
+            "source": 7,
+            "target": 11
+        },
+        {
+            "edge_type": 4,
+            "hidden": 0,
+            "source": 7,
+            "target": 9
+        },
+        {
+            "edge_type": 5,
+            "hidden": 0,
+            "source": 7,
+            "target": 16
+        },
+        {
+            "edge_type": 2,
+            "hidden": 0,
+            "source": 8,
+            "target": 9
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 8,
+            "target": 10
+        },
+        {
+            "edge_type": 5,
+            "hidden": 0,
+            "source": 9,
+            "target": 16
+        },
+        {
+            "edge_type": 2,
+            "hidden": 0,
+            "source": 10,
+            "target": 11
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 10,
+            "target": 12
+        },
+        {
+            "edge_type": 5,
+            "hidden": 0,
+            "source": 11,
+            "target": 16
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 12,
+            "target": 13
+        },
+        {
+            "edge_type": 5,
+            "hidden": 0,
+            "source": 13,
+            "target": 16
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 13,
+            "target": 19
+        },
+        {
+            "edge_type": 5,
+            "hidden": 0,
+            "source": 14,
+            "target": 16
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 14,
+            "target": 20
+        },
+        {
+            "edge_type": 5,
+            "hidden": 0,
+            "source": 15,
+            "target": 16
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 15,
+            "target": 18
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 16,
+            "target": 17
+        },
+        {
+            "edge_type": 3,
+            "hidden": 0,
+            "source": 17,
+            "target": 21
+        },
+        {
+            "edge_type": 3,
+            "hidden": 0,
+            "source": 18,
+            "target": 21
+        },
+        {
+            "edge_type": 3,
+            "hidden": 0,
+            "source": 19,
+            "target": 21
+        },
+        {
+            "edge_type": 3,
+            "hidden": 0,
+            "source": 20,
+            "target": 21
+        }
+    ],
+    "files": {
+        "/home/fjin/playground/survey/q3.cpp": "#include <stdio.h> \n#include <assert.h> \n#include <unistd.h>\nint main()\n{\n  int i=0, j, k;\n#pragma omp parallel\n#pragma omp single\n  {\n#pragma omp task depend (out:i)\n    {\n      i = 1;    \n    }\n#pragma omp task depend (in:i)\n    j =i; \n#pragma omp task depend (in:i)\n    k =i; \n  }\n  printf (\"j=%d k=%d\\n\", j, k);\n  assert (j==1 && k==1);\n  return 0;\n} \n"
+    },
+    "nodes": [
+        {
+            "active": 1,
+            "end_event": 0,
+            "has_race": false,
+            "hidden": 0,
+            "id": 1,
+            "ontarget": false,
+            "stack": "file: /home/fjin/playground/survey/q3.cpp, line: 7, col: 1"
+        },
+        {
+            "active": 1,
+            "end_event": 1,
+            "has_race": false,
+            "hidden": 0,
+            "id": 2,
+            "ontarget": false,
+            "stack": "file: /home/fjin/playground/survey/q3.cpp, line: 7, col: 1"
+        },
+        {
+            "active": 1,
+            "end_event": 3,
+            "has_race": false,
+            "hidden": 0,
+            "id": 3,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 3,
+            "has_race": false,
+            "hidden": 0,
+            "id": 4,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 5,
+            "has_race": false,
+            "hidden": 0,
+            "id": 5,
+            "ontarget": false,
+            "stack": "file: /home/fjin/playground/survey/q3.cpp, line: 10, col: 1"
+        },
+        {
+            "active": 1,
+            "end_event": 3,
+            "has_race": false,
+            "hidden": 0,
+            "id": 6,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 11,
+            "has_race": true,
+            "hidden": 0,
+            "id": 7,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 5,
+            "has_race": false,
+            "hidden": 0,
+            "id": 8,
+            "ontarget": false,
+            "stack": "file: /home/fjin/playground/survey/q3.cpp, line: 14, col: 1"
+        },
+        {
+            "active": 1,
+            "end_event": 11,
+            "has_race": true,
+            "hidden": 0,
+            "id": 9,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 5,
+            "has_race": false,
+            "hidden": 0,
+            "id": 10,
+            "ontarget": false,
+            "stack": "file: /home/fjin/playground/survey/q3.cpp, line: 16, col: 1"
+        },
+        {
+            "active": 1,
+            "end_event": 11,
+            "has_race": true,
+            "hidden": 0,
+            "id": 11,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 3,
+            "has_race": false,
+            "hidden": 0,
+            "id": 12,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 3,
+            "has_race": false,
+            "hidden": 0,
+            "id": 13,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 3,
+            "has_race": false,
+            "hidden": 0,
+            "id": 14,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 3,
+            "has_race": false,
+            "hidden": 0,
+            "id": 15,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 3,
+            "has_race": false,
+            "hidden": 0,
+            "id": 16,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 4,
+            "has_race": false,
+            "hidden": 0,
+            "id": 17,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 4,
+            "has_race": false,
+            "hidden": 0,
+            "id": 18,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 4,
+            "has_race": false,
+            "hidden": 0,
+            "id": 19,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 4,
+            "has_race": false,
+            "hidden": 0,
+            "id": 20,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 2,
+            "has_race": false,
+            "hidden": 0,
+            "id": 21,
+            "ontarget": false,
+            "stack": ""
+        }
+    ],
+    "races": [
+        {
+            "current": 9,
+            "current_stack": "    #0 .omp_outlined..1 /home/fjin/playground/survey/q3.cpp:15:8 (q3+0xd3dab)",
+            "lca": 0,
+            "prev": 7,
+            "prev_stack": "    #0 .omp_outlined. /home/fjin/playground/survey/q3.cpp:12:9 (q3+0xd3cf0)"
+        },
+        {
+            "current": 11,
+            "current_stack": "    #0 .omp_outlined..3 /home/fjin/playground/survey/q3.cpp:17:8 (q3+0xd3e8b)",
+            "lca": 0,
+            "prev": 7,
+            "prev_stack": "    #0 .omp_outlined. /home/fjin/playground/survey/q3.cpp:12:9 (q3+0xd3cf0)"
+        }
+    ],
+    "targets": null
+}

@@ -1,0 +1,338 @@
+{
+    "edges": [
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 1,
+            "target": 2
+        },
+        {
+            "edge_type": 1,
+            "hidden": 0,
+            "source": 1,
+            "target": 4
+        },
+        {
+            "edge_type": 1,
+            "hidden": 0,
+            "source": 1,
+            "target": 7
+        },
+        {
+            "edge_type": 1,
+            "hidden": 0,
+            "source": 1,
+            "target": 3
+        },
+        {
+            "edge_type": 1,
+            "hidden": 0,
+            "source": 1,
+            "target": 5
+        },
+        {
+            "edge_type": 1,
+            "hidden": 0,
+            "source": 1,
+            "target": 9
+        },
+        {
+            "edge_type": 1,
+            "hidden": 0,
+            "source": 1,
+            "target": 6
+        },
+        {
+            "edge_type": 1,
+            "hidden": 0,
+            "source": 1,
+            "target": 10
+        },
+        {
+            "edge_type": 1,
+            "hidden": 0,
+            "source": 1,
+            "target": 8
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 2,
+            "target": 19
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 3,
+            "target": 15
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 4,
+            "target": 12
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 5,
+            "target": 18
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 6,
+            "target": 11
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 7,
+            "target": 14
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 8,
+            "target": 17
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 9,
+            "target": 13
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 10,
+            "target": 16
+        },
+        {
+            "edge_type": 3,
+            "hidden": 0,
+            "source": 11,
+            "target": 19
+        },
+        {
+            "edge_type": 3,
+            "hidden": 0,
+            "source": 12,
+            "target": 19
+        },
+        {
+            "edge_type": 3,
+            "hidden": 0,
+            "source": 13,
+            "target": 19
+        },
+        {
+            "edge_type": 3,
+            "hidden": 0,
+            "source": 14,
+            "target": 19
+        },
+        {
+            "edge_type": 3,
+            "hidden": 0,
+            "source": 15,
+            "target": 19
+        },
+        {
+            "edge_type": 3,
+            "hidden": 0,
+            "source": 16,
+            "target": 19
+        },
+        {
+            "edge_type": 3,
+            "hidden": 0,
+            "source": 17,
+            "target": 19
+        },
+        {
+            "edge_type": 3,
+            "hidden": 0,
+            "source": 18,
+            "target": 19
+        }
+    ],
+    "files": {
+        "/home/fjin/gitRepo/dataracebench/micro-benchmarks/DRB170-nestedloops-orig-no.c": "/*\n!!!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~!!!\n!!! Copyright (c) 2017-20, Lawrence Livermore National Security, LLC\n!!! and DataRaceBench project contributors. See the DataRaceBench/COPYRIGHT file for details.\n!!!\n!!! SPDX-License-Identifier: (BSD-3-Clause)\n!!!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~!!!\n*/\n\n/* This kernel imitates the nature of a program from the NAS Parallel Benchmarks 3.0 MG suit.\n * Use of private clause at 26:28 will ensure that there is no data race. No Data Race Pairs. \n */\n\n\n#include <stdio.h>\n#include <omp.h>\n\nint main(){\n  int i,j,k,m;\n  double tmp1;\n\n  double a[12][12][12];\n\n  m = 3.0;\n\n  #pragma omp parallel for private(j,k,tmp1)   \n  for (i = 0; i < 12; i++) {\n    for (j = 0; j < 12; j++) {\n      for (k = 0; k < 12; k++) {\n        tmp1 = 6.0/m;\n        a[i][j][k] = tmp1+4;\n      }\n    }\n  }\n\n  return 0;\n}\n\n"
+    },
+    "nodes": [
+        {
+            "active": 1,
+            "end_event": 0,
+            "has_race": false,
+            "hidden": 0,
+            "id": 1,
+            "ontarget": false,
+            "stack": "file: /home/fjin/gitRepo/dataracebench/micro-benchmarks/DRB170-nestedloops-orig-no.c, line: 26, col: 3"
+        },
+        {
+            "active": 1,
+            "end_event": 1,
+            "has_race": false,
+            "hidden": 0,
+            "id": 2,
+            "ontarget": false,
+            "stack": "file: /home/fjin/gitRepo/dataracebench/micro-benchmarks/DRB170-nestedloops-orig-no.c, line: 26, col: 3"
+        },
+        {
+            "active": 1,
+            "end_event": 3,
+            "has_race": false,
+            "hidden": 0,
+            "id": 3,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 3,
+            "has_race": false,
+            "hidden": 0,
+            "id": 4,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 3,
+            "has_race": false,
+            "hidden": 0,
+            "id": 5,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 3,
+            "has_race": false,
+            "hidden": 0,
+            "id": 6,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 3,
+            "has_race": false,
+            "hidden": 0,
+            "id": 7,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 3,
+            "has_race": false,
+            "hidden": 0,
+            "id": 8,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 3,
+            "has_race": false,
+            "hidden": 0,
+            "id": 9,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 3,
+            "has_race": false,
+            "hidden": 0,
+            "id": 10,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 4,
+            "has_race": false,
+            "hidden": 0,
+            "id": 11,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 4,
+            "has_race": false,
+            "hidden": 0,
+            "id": 12,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 4,
+            "has_race": false,
+            "hidden": 0,
+            "id": 13,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 4,
+            "has_race": false,
+            "hidden": 0,
+            "id": 14,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 4,
+            "has_race": false,
+            "hidden": 0,
+            "id": 15,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 4,
+            "has_race": false,
+            "hidden": 0,
+            "id": 16,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 4,
+            "has_race": false,
+            "hidden": 0,
+            "id": 17,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 4,
+            "has_race": false,
+            "hidden": 0,
+            "id": 18,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 2,
+            "has_race": false,
+            "hidden": 0,
+            "id": 19,
+            "ontarget": false,
+            "stack": ""
+        }
+    ],
+    "races": null,
+    "targets": null
+}

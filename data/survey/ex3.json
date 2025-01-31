@@ -1,0 +1,220 @@
+{
+    "edges": [
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 1,
+            "target": 2
+        },
+        {
+            "edge_type": 1,
+            "hidden": 0,
+            "source": 1,
+            "target": 3
+        },
+        {
+            "edge_type": 1,
+            "hidden": 0,
+            "source": 1,
+            "target": 4
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 2,
+            "target": 11
+        },
+        {
+            "edge_type": 2,
+            "hidden": 0,
+            "source": 3,
+            "target": 5
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 3,
+            "target": 6
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 4,
+            "target": 10
+        },
+        {
+            "edge_type": 4,
+            "hidden": 0,
+            "source": 5,
+            "target": 7
+        },
+        {
+            "edge_type": 4,
+            "hidden": 0,
+            "source": 5,
+            "target": 7
+        },
+        {
+            "edge_type": 4,
+            "hidden": 0,
+            "source": 5,
+            "target": 7
+        },
+        {
+            "edge_type": 3,
+            "hidden": 0,
+            "source": 5,
+            "target": 11
+        },
+        {
+            "edge_type": 2,
+            "hidden": 0,
+            "source": 6,
+            "target": 7
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 6,
+            "target": 8
+        },
+        {
+            "edge_type": 3,
+            "hidden": 0,
+            "source": 7,
+            "target": 11
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 8,
+            "target": 9
+        },
+        {
+            "edge_type": 3,
+            "hidden": 0,
+            "source": 9,
+            "target": 11
+        },
+        {
+            "edge_type": 3,
+            "hidden": 0,
+            "source": 10,
+            "target": 11
+        }
+    ],
+    "files": {
+        "/home/fjin/playground/survey/ex3.cpp": "#include <stdio.h>\n#include <assert.h>\n \nint main()\n{\n\tint i=0;\n\tint j=0;\n\tint k=0;\n\tprintf(\"i address %p, j address %p \\n\", &i, &j);\n\t\n\t#pragma omp parallel num_threads(2)\n\t{\n\t\t#pragma omp single nowait\n\t\t{\n\t\t\t#pragma omp task depend(out:i) depend(in:j) depend(out:k)\n\t\t\t{\n\t\t\t\ti = 1;\n\t\t\t}\n\n\t\t\t#pragma omp task depend(out:i) depend(out:j) depend(inout:k)\n\t\t\t{\n\t\t\t\ti = 2;\n\t\t\t}\n\t\t}\n\t}\n\n\treturn 0;\n} \n"
+    },
+    "nodes": [
+        {
+            "active": 1,
+            "end_event": 0,
+            "has_race": false,
+            "hidden": 0,
+            "id": 1,
+            "ontarget": false,
+            "stack": "file: /home/fjin/playground/survey/ex3.cpp, line: 11, col: 2"
+        },
+        {
+            "active": 1,
+            "end_event": 1,
+            "has_race": false,
+            "hidden": 0,
+            "id": 2,
+            "ontarget": false,
+            "stack": "file: /home/fjin/playground/survey/ex3.cpp, line: 11, col: 2"
+        },
+        {
+            "active": 1,
+            "end_event": 5,
+            "has_race": false,
+            "hidden": 0,
+            "id": 3,
+            "ontarget": false,
+            "stack": "file: /home/fjin/playground/survey/ex3.cpp, line: 15, col: 4"
+        },
+        {
+            "active": 1,
+            "end_event": 3,
+            "has_race": false,
+            "hidden": 0,
+            "id": 4,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 11,
+            "has_race": true,
+            "hidden": 0,
+            "id": 5,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 5,
+            "has_race": false,
+            "hidden": 0,
+            "id": 6,
+            "ontarget": false,
+            "stack": "file: /home/fjin/playground/survey/ex3.cpp, line: 20, col: 4"
+        },
+        {
+            "active": 1,
+            "end_event": 11,
+            "has_race": true,
+            "hidden": 0,
+            "id": 7,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 3,
+            "has_race": false,
+            "hidden": 0,
+            "id": 8,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 4,
+            "has_race": false,
+            "hidden": 0,
+            "id": 9,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 4,
+            "has_race": false,
+            "hidden": 0,
+            "id": 10,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 2,
+            "has_race": false,
+            "hidden": 0,
+            "id": 11,
+            "ontarget": false,
+            "stack": ""
+        }
+    ],
+    "races": [
+        {
+            "current": 7,
+            "current_stack": "    #0 .omp_outlined. /home/fjin/playground/survey/ex3.cpp:17:7 (ex3+0xd3c50)",
+            "lca": 0,
+            "prev": 5,
+            "prev_stack": "    #0 .omp_outlined..1 /home/fjin/playground/survey/ex3.cpp:22:7 (ex3+0xd3d00)"
+        }
+    ],
+    "targets": null
+}

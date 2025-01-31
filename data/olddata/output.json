@@ -1,0 +1,223 @@
+{
+    "nodes": [
+        {
+            "id": "n1",
+            "end_event": "parallel_begin",
+            "has_race": 0,
+            "vertex_id": 1
+        },
+        {
+            "id": "n2",
+            "end_event": "parallel_end",
+            "has_race": 0,
+            "vertex_id": 2
+        },
+        {
+            "id": "n3",
+            "end_event": "task_create",
+            "has_race": 0,
+            "vertex_id": 3
+        },
+        {
+            "id": "n4",
+            "end_event": "task_create",
+            "has_race": 0,
+            "vertex_id": 4
+        },
+        {
+            "id": "n5",
+            "has_race": 1,
+            "vertex_id": 5
+        },
+        {
+            "id": "n6",
+            "has_race": 1,
+            "vertex_id": 6
+        },
+        {
+            "id": "n7",
+            "end_event": "task_create",
+            "has_race": 0,
+            "vertex_id": 7
+        },
+        {
+            "id": "n8",
+            "end_event": "task_create",
+            "has_race": 0,
+            "vertex_id": 8
+        },
+        {
+            "id": "n9",
+            "has_race": 1,
+            "vertex_id": 9
+        },
+        {
+            "id": "n10",
+            "end_event": "sync_region_begin",
+            "has_race": 0,
+            "vertex_id": 10
+        },
+        {
+            "id": "n11",
+            "has_race": 1,
+            "vertex_id": 11
+        },
+        {
+            "id": "n12",
+            "end_event": "sync_region_begin",
+            "has_race": 0,
+            "vertex_id": 12
+        },
+        {
+            "id": "n13",
+            "end_event": "sync_region_end",
+            "has_race": 0,
+            "vertex_id": 13
+        },
+        {
+            "id": "n14",
+            "end_event": "sync_region_end",
+            "has_race": 0,
+            "vertex_id": 14
+        },
+        {
+            "id": "n15",
+            "has_race": 0,
+            "vertex_id": 15
+        }
+    ],
+    "links": [
+        {
+            "source": "n1",
+            "target": "n2",
+            "edge_type": "CONT",
+            "id": "e0"
+        },
+        {
+            "source": "n1",
+            "target": "n3",
+            "edge_type": "FORK_I",
+            "id": "e1"
+        },
+        {
+            "source": "n1",
+            "target": "n4",
+            "edge_type": "FORK_I",
+            "id": "e2"
+        },
+        {
+            "source": "n2",
+            "target": "n15",
+            "edge_type": "CONT",
+            "id": "e3"
+        },
+        {
+            "source": "n3",
+            "target": "n6",
+            "edge_type": "FORK_E",
+            "id": "e4"
+        },
+        {
+            "source": "n3",
+            "target": "n8",
+            "edge_type": "CONT",
+            "id": "e5"
+        },
+        {
+            "source": "n4",
+            "target": "n5",
+            "edge_type": "FORK_E",
+            "id": "e6"
+        },
+        {
+            "source": "n4",
+            "target": "n7",
+            "edge_type": "CONT",
+            "id": "e7"
+        },
+        {
+            "source": "n5",
+            "target": "n9",
+            "edge_type": "JOIN_E",
+            "id": "e8"
+        },
+        {
+            "source": "n5",
+            "target": "n15",
+            "edge_type": "JOIN",
+            "id": "e9"
+        },
+        {
+            "source": "n6",
+            "target": "n11",
+            "edge_type": "JOIN_E",
+            "id": "e10"
+        },
+        {
+            "source": "n6",
+            "target": "n15",
+            "edge_type": "JOIN",
+            "id": "e11"
+        },
+        {
+            "source": "n7",
+            "target": "n9",
+            "edge_type": "FORK_E",
+            "id": "e12"
+        },
+        {
+            "source": "n7",
+            "target": "n10",
+            "edge_type": "CONT",
+            "id": "e13"
+        },
+        {
+            "source": "n8",
+            "target": "n11",
+            "edge_type": "FORK_E",
+            "id": "e14"
+        },
+        {
+            "source": "n8",
+            "target": "n12",
+            "edge_type": "CONT",
+            "id": "e15"
+        },
+        {
+            "source": "n9",
+            "target": "n15",
+            "edge_type": "JOIN",
+            "id": "e16"
+        },
+        {
+            "source": "n10",
+            "target": "n13",
+            "edge_type": "CONT",
+            "id": "e17"
+        },
+        {
+            "source": "n11",
+            "target": "n15",
+            "edge_type": "JOIN",
+            "id": "e18"
+        },
+        {
+            "source": "n12",
+            "target": "n14",
+            "edge_type": "CONT",
+            "id": "e19"
+        },
+        {
+            "source": "n13",
+            "target": "n15",
+            "edge_type": "JOIN",
+            "id": "e20"
+        },
+        {
+            "source": "n14",
+            "target": "n15",
+            "edge_type": "JOIN",
+            "id": "e21"
+        }
+    ]
+}

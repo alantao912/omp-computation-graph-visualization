@@ -1,0 +1,204 @@
+{
+    "directed": true,
+    "multigraph": false,
+    "graph": {
+        "node_default": {},
+        "edge_default": {}
+    },
+    "nodes": [
+        {
+            "end_event": "parallel_begin",
+            "has_race": 0,
+            "vertex_id": 1,
+            "id": "n1",
+            "active": true,
+            "hidden": false
+        },
+        {
+            "end_event": "parallel_end",
+            "has_race": 0,
+            "vertex_id": 2,
+            "id": "n2",
+            "active": true,
+            "hidden": false
+        },
+        {
+            "end_event": "task_create",
+            "has_race": 0,
+            "vertex_id": 3,
+            "id": "n3",
+            "active": true,
+            "hidden": false
+        },
+        {
+            "end_event": "sync_region_begin",
+            "has_race": 0,
+            "vertex_id": 4,
+            "id": "n4",
+            "active": true,
+            "hidden": false
+        },
+        {
+            "has_race": 1,
+            "race_stack": "    #0 .omp_outlined. /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/taskdep.cpp:17:7 (taskdep+0xd3130)",
+            "vertex_id": 5,
+            "id": "n5",
+            "active": true,
+            "hidden": false
+        },
+        {
+            "end_event": "task_create",
+            "has_race": 0,
+            "vertex_id": 6,
+            "id": "n6",
+            "active": true,
+            "hidden": false
+        },
+        {
+            "has_race": 1,
+            "race_stack": "    #0 .omp_outlined..1 /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/taskdep.cpp:22:7 (taskdep+0xd31e0)",
+            "vertex_id": 7,
+            "id": "n7",
+            "active": true,
+            "hidden": false
+        },
+        {
+            "end_event": "sync_region_begin",
+            "has_race": 0,
+            "vertex_id": 8,
+            "id": "n8",
+            "active": true,
+            "hidden": false
+        },
+        {
+            "end_event": "sync_region_end",
+            "has_race": 0,
+            "vertex_id": 9,
+            "id": "n9",
+            "active": true,
+            "hidden": false
+        },
+        {
+            "end_event": "sync_region_end",
+            "has_race": 0,
+            "vertex_id": 10,
+            "id": "n10",
+            "active": true,
+            "hidden": false
+        },
+        {
+            "has_race": 0,
+            "vertex_id": 11,
+            "id": "n11",
+            "active": true,
+            "hidden": false
+        }
+    ],
+    "links": [
+        {
+            "edge_type": "CONT",
+            "id": "e0",
+            "source": "n1",
+            "target": "n2",
+            "hidden": false
+        },
+        {
+            "edge_type": "FORK_I",
+            "id": "e1",
+            "source": "n1",
+            "target": "n3",
+            "hidden": false
+        },
+        {
+            "edge_type": "FORK_I",
+            "id": "e2",
+            "source": "n1",
+            "target": "n4",
+            "hidden": false
+        },
+        {
+            "edge_type": "CONT",
+            "id": "e3",
+            "source": "n2",
+            "target": "n11",
+            "hidden": false
+        },
+        {
+            "edge_type": "FORK_E",
+            "id": "e4",
+            "source": "n3",
+            "target": "n5",
+            "hidden": false
+        },
+        {
+            "edge_type": "CONT",
+            "id": "e5",
+            "source": "n3",
+            "target": "n6",
+            "hidden": false
+        },
+        {
+            "edge_type": "CONT",
+            "id": "e6",
+            "source": "n4",
+            "target": "n10",
+            "hidden": false
+        },
+        {
+            "edge_type": "JOIN_E",
+            "id": "e7",
+            "source": "n5",
+            "target": "n7",
+            "hidden": false
+        },
+        {
+            "edge_type": "JOIN",
+            "id": "e8",
+            "source": "n5",
+            "target": "n11",
+            "hidden": false
+        },
+        {
+            "edge_type": "FORK_E",
+            "id": "e9",
+            "source": "n6",
+            "target": "n7",
+            "hidden": false
+        },
+        {
+            "edge_type": "CONT",
+            "id": "e10",
+            "source": "n6",
+            "target": "n8",
+            "hidden": false
+        },
+        {
+            "edge_type": "JOIN",
+            "id": "e11",
+            "source": "n7",
+            "target": "n11",
+            "hidden": false
+        },
+        {
+            "edge_type": "CONT",
+            "id": "e12",
+            "source": "n8",
+            "target": "n9",
+            "hidden": false
+        },
+        {
+            "edge_type": "JOIN",
+            "id": "e13",
+            "source": "n9",
+            "target": "n11",
+            "hidden": false
+        },
+        {
+            "edge_type": "JOIN",
+            "id": "e14",
+            "source": "n10",
+            "target": "n11",
+            "hidden": false
+        }
+    ]
+}

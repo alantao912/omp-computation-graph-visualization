@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="public/style.css">
+    <title>Graph Visualization</title>
+    <!-- Include D3.js library -->
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="public/dagre.js"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.63.1/codemirror.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.32.0/codemirror.min.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="lib/codemirror.css"></link>
+
+    <script language="javascript" type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.js"></script>
+    <script language="javascript" type="text/javascript" src="https://codemirror.net/5/mode/clike/clike.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.css"></link>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/theme/abbott.min.css"></link>
+        
+</head>
+
+<body>
+    <div id="page-layout">
+      <div class="title-display">
+        <h1> Computation Graph Visualization </h1>
+      </div>
+
+      <div class="main-display">
+        <div class="graph-display">
+          <svg id="svgJSON">
+              <g transform="translate(2, 2)">
+                <defs id="defs" />
+                <g id="links" />
+                <g id="nodes" />
+              </g>
+          </svg>
+        </div>
+
+        <div class="source-code-wrapper-class" id="source-code-wrapper">
+          <textarea class="source-code-display-class" id="source-code-display"></textarea>
+        </div>
+
+        <div class="source-code-wrapper-class" id="source-code-wrapper2">
+          <textarea class="source-code-display-class" id="source-code-display2"></textarea>
+        </div>
+
+        <div class="sidebar-display" id = "sidebar-display" style="display: none;">
+          <div id="memory-vis">
+
+            <div id="memory-vis-display-legend-wrapper">
+              <h3> Legend </h3>
+              <svg id="memory-vis-legend">
+                <g id="legend"/>
+              </svg>
+            </div>
+            
+            <div id="memory-vis-header-wrapper">
+              <h2 id="memory-vis-header">Data Movements</h2>
+              <div id="memory-vis-header-subheading">
+                <h3 id="memory-vis-header-host"> Host </h3>
+                <span id="memory-vis-header-gap"></span>
+                <h3 id="memory-vis-header-target"> Target </h3>
+              </div>
+            </div>
+            <div id="memory-vis-display-wrapper">
+              <svg id="memory-vis-display">
+                <g id="data-transfer"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div id="footer">
+        <div id="footer-upper">
+          <div id = "legend-region">
+            <svg id="node-legend"></svg>
+            <svg id="edge-legend"></svg>
+          </div>
+
+          <div id="button-regions">
+            <p id="race-notice"></p>
+            <div id="race-buttons">
+              <div id="data-race-buttons"></div>
+              <div id="show-all-button"></div>
+            </div>
+          </div>
+          
+          <div id="tooltip" style="visibility: hidden;">a simple tooltip</div>
+        </div>
+        
+        <div id="footer-lower">
+          <div id="data-upload-region">
+            <!-- <p> Upload Data  </p> -->
+            <input type="file" id="selectedFile" style="display: none;" />
+            <input type="button" id="json_fileInput" value="Upload File" onclick="document.getElementById('selectedFile').click();" />
+            <br>
+            <input type="button" id="show-graph-button" value="show all graph" style="display: none;"/>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <script>
+      const urlParams = new URLSearchParams(window.location.search);
+      const benchmark = urlParams.get('bench');
+    </script>
+
+    <script src="public/survey.js"></script>
+    <script src="public/d3dag_util.js"></script>
+    <script src="public/d3dag.js"></script>
+    <script src="public/json-input-script.js"></script>
+</body>
+
+</html>

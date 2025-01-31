@@ -1,0 +1,388 @@
+{
+    "edges": [
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 1,
+            "target": 2
+        },
+        {
+            "edge_type": 1,
+            "hidden": 0,
+            "source": 1,
+            "target": 3
+        },
+        {
+            "edge_type": 1,
+            "hidden": 0,
+            "source": 1,
+            "target": 5
+        },
+        {
+            "edge_type": 1,
+            "hidden": 0,
+            "source": 1,
+            "target": 6
+        },
+        {
+            "edge_type": 1,
+            "hidden": 0,
+            "source": 1,
+            "target": 4
+        },
+        {
+            "edge_type": 1,
+            "hidden": 0,
+            "source": 1,
+            "target": 7
+        },
+        {
+            "edge_type": 1,
+            "hidden": 0,
+            "source": 1,
+            "target": 8
+        },
+        {
+            "edge_type": 1,
+            "hidden": 0,
+            "source": 1,
+            "target": 9
+        },
+        {
+            "edge_type": 1,
+            "hidden": 0,
+            "source": 1,
+            "target": 10
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 2,
+            "target": 19
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 3,
+            "target": 13
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 4,
+            "target": 16
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 5,
+            "target": 18
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 6,
+            "target": 15
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 7,
+            "target": 14
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 8,
+            "target": 17
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 9,
+            "target": 11
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 10,
+            "target": 12
+        },
+        {
+            "edge_type": 3,
+            "hidden": 0,
+            "source": 11,
+            "target": 19
+        },
+        {
+            "edge_type": 3,
+            "hidden": 0,
+            "source": 12,
+            "target": 19
+        },
+        {
+            "edge_type": 3,
+            "hidden": 0,
+            "source": 13,
+            "target": 19
+        },
+        {
+            "edge_type": 3,
+            "hidden": 0,
+            "source": 14,
+            "target": 19
+        },
+        {
+            "edge_type": 3,
+            "hidden": 0,
+            "source": 15,
+            "target": 19
+        },
+        {
+            "edge_type": 3,
+            "hidden": 0,
+            "source": 16,
+            "target": 19
+        },
+        {
+            "edge_type": 3,
+            "hidden": 0,
+            "source": 17,
+            "target": 19
+        },
+        {
+            "edge_type": 3,
+            "hidden": 0,
+            "source": 18,
+            "target": 19
+        }
+    ],
+    "files": {
+        "/home/fjin/gitRepo/dataracebench/micro-benchmarks/DRB082-declared-in-func-orig-yes.c": "/*\nCopyright (c) 2017, Lawrence Livermore National Security, LLC.\nProduced at the Lawrence Livermore National Laboratory\nWritten by Chunhua Liao, Pei-Hung Lin, Joshua Asplund,\nMarkus Schordan, and Ian Karlin\n(email: liao6@llnl.gov, lin32@llnl.gov, asplund1@llnl.gov,\nschordan1@llnl.gov, karlin1@llnl.gov)\nLLNL-CODE-732144\nAll rights reserved.\n\nThis file is part of DataRaceBench. For details, see\nhttps://github.com/LLNL/dataracebench. Please also see the LICENSE file\nfor our additional BSD notice.\n\nRedistribution and use in source and binary forms, with\nor without modification, are permitted provided that the following\nconditions are met:\n\n* Redistributions of source code must retain the above copyright\n  notice, this list of conditions and the disclaimer below.\n\n* Redistributions in binary form must reproduce the above copyright\n  notice, this list of conditions and the disclaimer (as noted below)\n  in the documentation and/or other materials provided with the\n  distribution.\n\n* Neither the name of the LLNS/LLNL nor the names of its contributors\n  may be used to endorse or promote products derived from this\n  software without specific prior written permission.\n\nTHIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND\nCONTRIBUTORS \"AS IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES,\nINCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF\nMERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE\nDISCLAIMED. IN NO EVENT SHALL LAWRENCE LIVERMORE NATIONAL\nSECURITY, LLC, THE U.S. DEPARTMENT OF ENERGY OR CONTRIBUTORS BE\nLIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY,\nOR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,\nPROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE,\nDATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND\nON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT\nLIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING\nIN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF\nTHE POSSIBILITY OF SUCH DAMAGE.\n*/\n\n/*\nA variable is declared inside a function called within a parallel region.\nThe variable should be shared if it uses static storage.\n\nData race pair: q@57:3:W vs. q@57:3:W \n*/\n\nvoid foo()\n{\n  static int q; \n  q += 1;\n}\n\nint main()\n{ \n  #pragma omp parallel \n  {\n     foo();\n  }\n  return 0;   \n}\n\n"
+    },
+    "nodes": [
+        {
+            "active": 1,
+            "end_event": 0,
+            "has_race": false,
+            "hidden": 0,
+            "id": 1,
+            "ontarget": false,
+            "stack": "file: /home/fjin/gitRepo/dataracebench/micro-benchmarks/DRB082-declared-in-func-orig-yes.c, line: 62, col: 3"
+        },
+        {
+            "active": 1,
+            "end_event": 1,
+            "has_race": false,
+            "hidden": 0,
+            "id": 2,
+            "ontarget": false,
+            "stack": "file: /home/fjin/gitRepo/dataracebench/micro-benchmarks/DRB082-declared-in-func-orig-yes.c, line: 62, col: 3"
+        },
+        {
+            "active": 1,
+            "end_event": 3,
+            "has_race": true,
+            "hidden": 0,
+            "id": 3,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 3,
+            "has_race": true,
+            "hidden": 0,
+            "id": 4,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 3,
+            "has_race": true,
+            "hidden": 0,
+            "id": 5,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 3,
+            "has_race": true,
+            "hidden": 0,
+            "id": 6,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 3,
+            "has_race": true,
+            "hidden": 0,
+            "id": 7,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 3,
+            "has_race": true,
+            "hidden": 0,
+            "id": 8,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 3,
+            "has_race": true,
+            "hidden": 0,
+            "id": 9,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 3,
+            "has_race": true,
+            "hidden": 0,
+            "id": 10,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 4,
+            "has_race": false,
+            "hidden": 0,
+            "id": 11,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 4,
+            "has_race": false,
+            "hidden": 0,
+            "id": 12,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 4,
+            "has_race": false,
+            "hidden": 0,
+            "id": 13,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 4,
+            "has_race": false,
+            "hidden": 0,
+            "id": 14,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 4,
+            "has_race": false,
+            "hidden": 0,
+            "id": 15,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 4,
+            "has_race": false,
+            "hidden": 0,
+            "id": 16,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 4,
+            "has_race": false,
+            "hidden": 0,
+            "id": 17,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 4,
+            "has_race": false,
+            "hidden": 0,
+            "id": 18,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 2,
+            "has_race": false,
+            "hidden": 0,
+            "id": 19,
+            "ontarget": false,
+            "stack": ""
+        }
+    ],
+    "races": [
+        {
+            "current": 4,
+            "current_stack": "/home/fjin/gitRepo/dataracebench/micro-benchmarks/DRB082-declared-in-func-orig-yes.c:57:",
+            "lca": 0,
+            "prev": 3,
+            "prev_stack": ""
+        },
+        {
+            "current": 5,
+            "current_stack": "/home/fjin/gitRepo/dataracebench/micro-benchmarks/DRB082-declared-in-func-orig-yes.c:57:",
+            "lca": 0,
+            "prev": 3,
+            "prev_stack": ""
+        },
+        {
+            "current": 6,
+            "current_stack": "/home/fjin/gitRepo/dataracebench/micro-benchmarks/DRB082-declared-in-func-orig-yes.c:57:",
+            "lca": 0,
+            "prev": 3,
+            "prev_stack": ""
+        },
+        {
+            "current": 7,
+            "current_stack": "/home/fjin/gitRepo/dataracebench/micro-benchmarks/DRB082-declared-in-func-orig-yes.c:57:",
+            "lca": 0,
+            "prev": 3,
+            "prev_stack": ""
+        },
+        {
+            "current": 8,
+            "current_stack": "/home/fjin/gitRepo/dataracebench/micro-benchmarks/DRB082-declared-in-func-orig-yes.c:57:",
+            "lca": 0,
+            "prev": 3,
+            "prev_stack": ""
+        },
+        {
+            "current": 9,
+            "current_stack": "/home/fjin/gitRepo/dataracebench/micro-benchmarks/DRB082-declared-in-func-orig-yes.c:57:",
+            "lca": 0,
+            "prev": 3,
+            "prev_stack": ""
+        },
+        {
+            "current": 10,
+            "current_stack": "/home/fjin/gitRepo/dataracebench/micro-benchmarks/DRB082-declared-in-func-orig-yes.c:57:",
+            "lca": 0,
+            "prev": 3,
+            "prev_stack": ""
+        }
+    ],
+    "targets": null
+}

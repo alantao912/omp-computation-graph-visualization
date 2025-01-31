@@ -1,0 +1,71 @@
+{
+    "edges": [
+        {
+            "edge_type": 2,
+            "hidden": 0,
+            "source": 1,
+            "target": 2
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 1,
+            "target": 3
+        },
+        {
+            "edge_type": 3,
+            "hidden": 0,
+            "source": 2,
+            "target": 4
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 3,
+            "target": 4
+        }
+    ],
+    "files": {
+        "/home/fjin/gitRepo/dataracebench/micro-benchmarks/DRB129-mergeable-taskwait-orig-yes.c": "/*\n!!!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~!!!\n!!! Copyright (c) 2017-20, Lawrence Livermore National Security, LLC\n!!! and DataRaceBench project contributors. See the DataRaceBench/COPYRIGHT file for details.\n!!!\n!!! SPDX-License-Identifier: (BSD-3-Clause)\n!!!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~!!!\n */\n\n/*\n * Taken from OpenMP Examples 5.0, example tasking.12.c\n * The created task will access different instances of the variable x if the task is not merged,\n * as x is firstprivate, but it will access the same variable x if the task is merged. It can\n * print two different values for x depending on the decisions taken by the implementation.\n * Data Race Pairs, x@27:5:W vs. x@27:5:W\n */\n\n#include <omp.h>\n#include <stdio.h>\n\n\nint main(){\n  int x = 2;\n\n  #pragma omp task mergeable\n  {\n    x++;\n  }\n  #pragma omp taskwait\n\n  printf(\"%d\\n\",x);\n  return 0;\n}\n"
+    },
+    "nodes": [
+        {
+            "active": 1,
+            "end_event": 5,
+            "has_race": false,
+            "hidden": 0,
+            "id": 1,
+            "ontarget": false,
+            "stack": "file: /home/fjin/gitRepo/dataracebench/micro-benchmarks/DRB129-mergeable-taskwait-orig-yes.c, line: 25, col: 3"
+        },
+        {
+            "active": 1,
+            "end_event": 11,
+            "has_race": false,
+            "hidden": 0,
+            "id": 2,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 8,
+            "has_race": false,
+            "hidden": 0,
+            "id": 3,
+            "ontarget": false,
+            "stack": "file: /home/fjin/gitRepo/dataracebench/micro-benchmarks/DRB129-mergeable-taskwait-orig-yes.c, line: 29, col: 3"
+        },
+        {
+            "active": 1,
+            "end_event": 2,
+            "has_race": false,
+            "hidden": 0,
+            "id": 4,
+            "ontarget": false,
+            "stack": ""
+        }
+    ],
+    "races": null,
+    "targets": null
+}

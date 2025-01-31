@@ -1,0 +1,86 @@
+{
+    "edges": [
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 1,
+            "target": 2
+        },
+        {
+            "edge_type": 1,
+            "hidden": 0,
+            "source": 1,
+            "target": 3
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 2,
+            "target": 5
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 3,
+            "target": 4
+        },
+        {
+            "edge_type": 3,
+            "hidden": 0,
+            "source": 4,
+            "target": 5
+        }
+    ],
+    "files": {
+        "/home/fjin/gitRepo/dataracebench/micro-benchmarks/DRB126-firstprivatesections-orig-no.c": "/*\n!!!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~!!!\n!!! Copyright (c) 2017-20, Lawrence Livermore National Security, LLC\n!!! and DataRaceBench project contributors. See the DataRaceBench/COPYRIGHT file for details.\n!!!\n!!! SPDX-License-Identifier: (BSD-3-Clause)\n!!!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~!!!\n*/\n\n/*\n * This example is based on fpriv_sections.1.c OpenMP Examples 5.0.0\n * The section construct modifies the value of section_count which breaks the independence of the\n * section constructs. If the same thread executes both the section one will print 1 and the other\n * will print 2. For a same thread execution, there is no data race. \n */\n\n#include <omp.h>\n#include <stdio.h>\n\nint main(){\n  int section_count = 0;\n  omp_set_dynamic(0);\n  \n  omp_set_num_threads(1);\n\n  #pragma omp parallel\n  #pragma omp sections firstprivate( section_count )\n  {\n    #pragma omp section\n    {\n      section_count++;\n      printf(\"%d\\n\",section_count);\n    }\n    #pragma omp section\n    {\n      section_count++;\n      printf(\"%d\\n\",section_count);\n    }\n  }\n  return 0;\n}\n"
+    },
+    "nodes": [
+        {
+            "active": 1,
+            "end_event": 0,
+            "has_race": false,
+            "hidden": 0,
+            "id": 1,
+            "ontarget": false,
+            "stack": "file: /home/fjin/gitRepo/dataracebench/micro-benchmarks/DRB126-firstprivatesections-orig-no.c, line: 26, col: 3"
+        },
+        {
+            "active": 1,
+            "end_event": 1,
+            "has_race": false,
+            "hidden": 0,
+            "id": 2,
+            "ontarget": false,
+            "stack": "file: /home/fjin/gitRepo/dataracebench/micro-benchmarks/DRB126-firstprivatesections-orig-no.c, line: 26, col: 3"
+        },
+        {
+            "active": 1,
+            "end_event": 3,
+            "has_race": false,
+            "hidden": 0,
+            "id": 3,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 4,
+            "has_race": false,
+            "hidden": 0,
+            "id": 4,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 2,
+            "has_race": false,
+            "hidden": 0,
+            "id": 5,
+            "ontarget": false,
+            "stack": ""
+        }
+    ],
+    "races": null,
+    "targets": null
+}

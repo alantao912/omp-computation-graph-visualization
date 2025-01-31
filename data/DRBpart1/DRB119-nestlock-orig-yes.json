@@ -1,0 +1,346 @@
+{
+    "edges": [
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 1,
+            "target": 2
+        },
+        {
+            "edge_type": 1,
+            "hidden": 0,
+            "source": 1,
+            "target": 5
+        },
+        {
+            "edge_type": 1,
+            "hidden": 0,
+            "source": 1,
+            "target": 3
+        },
+        {
+            "edge_type": 1,
+            "hidden": 0,
+            "source": 1,
+            "target": 4
+        },
+        {
+            "edge_type": 1,
+            "hidden": 0,
+            "source": 1,
+            "target": 6
+        },
+        {
+            "edge_type": 1,
+            "hidden": 0,
+            "source": 1,
+            "target": 7
+        },
+        {
+            "edge_type": 1,
+            "hidden": 0,
+            "source": 1,
+            "target": 8
+        },
+        {
+            "edge_type": 1,
+            "hidden": 0,
+            "source": 1,
+            "target": 9
+        },
+        {
+            "edge_type": 1,
+            "hidden": 0,
+            "source": 1,
+            "target": 10
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 2,
+            "target": 19
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 3,
+            "target": 16
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 4,
+            "target": 14
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 5,
+            "target": 13
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 6,
+            "target": 15
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 7,
+            "target": 17
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 8,
+            "target": 18
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 9,
+            "target": 12
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 10,
+            "target": 11
+        },
+        {
+            "edge_type": 3,
+            "hidden": 0,
+            "source": 11,
+            "target": 19
+        },
+        {
+            "edge_type": 3,
+            "hidden": 0,
+            "source": 12,
+            "target": 19
+        },
+        {
+            "edge_type": 3,
+            "hidden": 0,
+            "source": 13,
+            "target": 19
+        },
+        {
+            "edge_type": 3,
+            "hidden": 0,
+            "source": 14,
+            "target": 19
+        },
+        {
+            "edge_type": 3,
+            "hidden": 0,
+            "source": 15,
+            "target": 19
+        },
+        {
+            "edge_type": 3,
+            "hidden": 0,
+            "source": 16,
+            "target": 19
+        },
+        {
+            "edge_type": 3,
+            "hidden": 0,
+            "source": 17,
+            "target": 19
+        },
+        {
+            "edge_type": 3,
+            "hidden": 0,
+            "source": 18,
+            "target": 19
+        }
+    ],
+    "files": {
+        "/home/fjin/gitRepo/dataracebench/micro-benchmarks/DRB119-nestlock-orig-yes.c": "/*\n!!!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~!!!\n!!! Copyright (c) 2017-20, Lawrence Livermore National Security, LLC\n!!! and DataRaceBench project contributors. See the DataRaceBench/COPYRIGHT file for details.\n!!!\n!!! SPDX-License-Identifier: (BSD-3-Clause)\n!!!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~!!!\n*/\n\n/*\nA nested lock can be locked several times. It doesn't unlock until you have unset\nit as many times as the number of calls to omp_set_nest_lock.\nincr_b is called at line 48 and line 53. So, it needs a nest_lock enclosing line 32\nMissing nest_lock will lead to race condition at line:32.\nData Race Pairs, p->b@32:6:W vs. p->b@32:6:W\n*/\n\n#include <omp.h>\n#include <stdio.h>\n#include <stdlib.h>\n\ntypedef struct {\n  int a, b;\n  omp_nest_lock_t lck;\n} pair;\n\nvoid incr_a(pair *p){\n  p->a += 1;\n}\n\nvoid incr_b(pair *p){\n  p->b += 1;\n}\n\n\nint main(int argc, char* argv[])\n{\n  pair p[1];\n  p->a = 0;\n  p->b = 0;\n  omp_init_nest_lock(&p->lck);\n\n  #pragma omp parallel sections\n  {\n    #pragma omp section\n    {\n      omp_set_nest_lock(&p->lck);\n      incr_b(p);\n      incr_a(p);\n      omp_unset_nest_lock(&p->lck);\n    }\n    #pragma omp section\n      incr_b(p);\n  }\n\n  omp_destroy_nest_lock(&p->lck);\n\n  printf(\"%d\\n\",p->b);\n  return 0;\n}\n"
+    },
+    "nodes": [
+        {
+            "active": 1,
+            "end_event": 0,
+            "has_race": false,
+            "hidden": 0,
+            "id": 1,
+            "ontarget": false,
+            "stack": "file: /home/fjin/gitRepo/dataracebench/micro-benchmarks/DRB119-nestlock-orig-yes.c, line: 43, col: 3"
+        },
+        {
+            "active": 1,
+            "end_event": 1,
+            "has_race": false,
+            "hidden": 0,
+            "id": 2,
+            "ontarget": false,
+            "stack": "file: /home/fjin/gitRepo/dataracebench/micro-benchmarks/DRB119-nestlock-orig-yes.c, line: 43, col: 3"
+        },
+        {
+            "active": 1,
+            "end_event": 3,
+            "has_race": false,
+            "hidden": 0,
+            "id": 3,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 3,
+            "has_race": false,
+            "hidden": 0,
+            "id": 4,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 3,
+            "has_race": true,
+            "hidden": 0,
+            "id": 5,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 3,
+            "has_race": true,
+            "hidden": 0,
+            "id": 6,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 3,
+            "has_race": false,
+            "hidden": 0,
+            "id": 7,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 3,
+            "has_race": false,
+            "hidden": 0,
+            "id": 8,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 3,
+            "has_race": false,
+            "hidden": 0,
+            "id": 9,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 3,
+            "has_race": false,
+            "hidden": 0,
+            "id": 10,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 4,
+            "has_race": false,
+            "hidden": 0,
+            "id": 11,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 4,
+            "has_race": false,
+            "hidden": 0,
+            "id": 12,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 4,
+            "has_race": false,
+            "hidden": 0,
+            "id": 13,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 4,
+            "has_race": false,
+            "hidden": 0,
+            "id": 14,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 4,
+            "has_race": false,
+            "hidden": 0,
+            "id": 15,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 4,
+            "has_race": false,
+            "hidden": 0,
+            "id": 16,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 4,
+            "has_race": false,
+            "hidden": 0,
+            "id": 17,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 4,
+            "has_race": false,
+            "hidden": 0,
+            "id": 18,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 2,
+            "has_race": false,
+            "hidden": 0,
+            "id": 19,
+            "ontarget": false,
+            "stack": ""
+        }
+    ],
+    "races": [
+        {
+            "current": 6,
+            "current_stack": "/home/fjin/gitRepo/dataracebench/micro-benchmarks/DRB119-nestlock-orig-yes.c:32:",
+            "lca": 0,
+            "prev": 5,
+            "prev_stack": ""
+        }
+    ],
+    "targets": null
+}

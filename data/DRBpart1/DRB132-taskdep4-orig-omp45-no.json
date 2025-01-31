@@ -1,0 +1,677 @@
+{
+    "edges": [
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 1,
+            "target": 2
+        },
+        {
+            "edge_type": 1,
+            "hidden": 0,
+            "source": 1,
+            "target": 3
+        },
+        {
+            "edge_type": 1,
+            "hidden": 0,
+            "source": 1,
+            "target": 4
+        },
+        {
+            "edge_type": 1,
+            "hidden": 0,
+            "source": 1,
+            "target": 5
+        },
+        {
+            "edge_type": 1,
+            "hidden": 0,
+            "source": 1,
+            "target": 7
+        },
+        {
+            "edge_type": 1,
+            "hidden": 0,
+            "source": 1,
+            "target": 8
+        },
+        {
+            "edge_type": 1,
+            "hidden": 0,
+            "source": 1,
+            "target": 6
+        },
+        {
+            "edge_type": 1,
+            "hidden": 0,
+            "source": 1,
+            "target": 9
+        },
+        {
+            "edge_type": 1,
+            "hidden": 0,
+            "source": 1,
+            "target": 10
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 2,
+            "target": 36
+        },
+        {
+            "edge_type": 2,
+            "hidden": 0,
+            "source": 3,
+            "target": 11
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 3,
+            "target": 12
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 4,
+            "target": 24
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 5,
+            "target": 23
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 6,
+            "target": 25
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 7,
+            "target": 26
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 8,
+            "target": 21
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 9,
+            "target": 22
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 10,
+            "target": 27
+        },
+        {
+            "edge_type": 3,
+            "hidden": 0,
+            "source": 11,
+            "target": 19
+        },
+        {
+            "edge_type": 5,
+            "hidden": 0,
+            "source": 11,
+            "target": 20
+        },
+        {
+            "edge_type": 2,
+            "hidden": 0,
+            "source": 12,
+            "target": 13
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 12,
+            "target": 14
+        },
+        {
+            "edge_type": 3,
+            "hidden": 0,
+            "source": 13,
+            "target": 19
+        },
+        {
+            "edge_type": 5,
+            "hidden": 0,
+            "source": 13,
+            "target": 20
+        },
+        {
+            "edge_type": 2,
+            "hidden": 0,
+            "source": 14,
+            "target": 15
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 14,
+            "target": 16
+        },
+        {
+            "edge_type": 3,
+            "hidden": 0,
+            "source": 15,
+            "target": 19
+        },
+        {
+            "edge_type": 2,
+            "hidden": 0,
+            "source": 16,
+            "target": 17
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 16,
+            "target": 18
+        },
+        {
+            "edge_type": 3,
+            "hidden": 0,
+            "source": 17,
+            "target": 19
+        },
+        {
+            "edge_type": 5,
+            "hidden": 0,
+            "source": 17,
+            "target": 20
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 18,
+            "target": 19
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 19,
+            "target": 20
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 20,
+            "target": 28
+        },
+        {
+            "edge_type": 5,
+            "hidden": 0,
+            "source": 21,
+            "target": 20
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 21,
+            "target": 30
+        },
+        {
+            "edge_type": 5,
+            "hidden": 0,
+            "source": 22,
+            "target": 20
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 22,
+            "target": 33
+        },
+        {
+            "edge_type": 5,
+            "hidden": 0,
+            "source": 23,
+            "target": 20
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 23,
+            "target": 32
+        },
+        {
+            "edge_type": 5,
+            "hidden": 0,
+            "source": 24,
+            "target": 20
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 24,
+            "target": 35
+        },
+        {
+            "edge_type": 5,
+            "hidden": 0,
+            "source": 25,
+            "target": 20
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 25,
+            "target": 31
+        },
+        {
+            "edge_type": 5,
+            "hidden": 0,
+            "source": 26,
+            "target": 20
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 26,
+            "target": 34
+        },
+        {
+            "edge_type": 5,
+            "hidden": 0,
+            "source": 27,
+            "target": 20
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 27,
+            "target": 29
+        },
+        {
+            "edge_type": 3,
+            "hidden": 0,
+            "source": 28,
+            "target": 36
+        },
+        {
+            "edge_type": 3,
+            "hidden": 0,
+            "source": 29,
+            "target": 36
+        },
+        {
+            "edge_type": 3,
+            "hidden": 0,
+            "source": 30,
+            "target": 36
+        },
+        {
+            "edge_type": 3,
+            "hidden": 0,
+            "source": 31,
+            "target": 36
+        },
+        {
+            "edge_type": 3,
+            "hidden": 0,
+            "source": 32,
+            "target": 36
+        },
+        {
+            "edge_type": 3,
+            "hidden": 0,
+            "source": 33,
+            "target": 36
+        },
+        {
+            "edge_type": 3,
+            "hidden": 0,
+            "source": 34,
+            "target": 36
+        },
+        {
+            "edge_type": 3,
+            "hidden": 0,
+            "source": 35,
+            "target": 36
+        }
+    ],
+    "files": {
+        "/home/fjin/gitRepo/dataracebench/micro-benchmarks/DRB132-taskdep4-orig-omp45-no.c": "/*\n!!!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~!!!\n!!! Copyright (c) 2017-20, Lawrence Livermore National Security, LLC\n!!! and DataRaceBench project contributors. See the DataRaceBench/COPYRIGHT file for details.\n!!!\n!!! SPDX-License-Identifier: (BSD-3-Clause)\n!!!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~!!!\n */\n\n/* The second taskwait ensures that the second child task has completed; hence it is safe to access\n * the y variable in the following print statement.\n * */\n\n\n#include <stdio.h>\n#include <omp.h>\n\nvoid foo(){\n\n  int x = 0, y = 2;\n\n  #pragma omp task depend(inout: x) shared(x)\n  x++;                                                //1st Child Task\n\n  #pragma omp task shared(y)\n  y--;                                                // 2nd child task\n\n  #pragma omp task depend(in: x) if(0)                // 1st taskwait\n  {}\n\n  printf(\"x=%d\\n\",x);\n\n  #pragma omp taskwait                                // 2nd taskwait\n\n  printf(\"y=%d\\n\",y);\n}\n\n\nint main(){\n  #pragma omp parallel\n  #pragma omp single\n  foo();\n\n  return 0;\n}\n\n"
+    },
+    "nodes": [
+        {
+            "active": 1,
+            "end_event": 0,
+            "has_race": false,
+            "hidden": 0,
+            "id": 1,
+            "ontarget": false,
+            "stack": "file: /home/fjin/gitRepo/dataracebench/micro-benchmarks/DRB132-taskdep4-orig-omp45-no.c, line: 40, col: 3"
+        },
+        {
+            "active": 1,
+            "end_event": 1,
+            "has_race": false,
+            "hidden": 0,
+            "id": 2,
+            "ontarget": false,
+            "stack": "file: /home/fjin/gitRepo/dataracebench/micro-benchmarks/DRB132-taskdep4-orig-omp45-no.c, line: 40, col: 3"
+        },
+        {
+            "active": 1,
+            "end_event": 5,
+            "has_race": false,
+            "hidden": 0,
+            "id": 3,
+            "ontarget": false,
+            "stack": "file: /home/fjin/gitRepo/dataracebench/micro-benchmarks/DRB132-taskdep4-orig-omp45-no.c, line: 22, col: 3"
+        },
+        {
+            "active": 1,
+            "end_event": 3,
+            "has_race": false,
+            "hidden": 0,
+            "id": 4,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 3,
+            "has_race": false,
+            "hidden": 0,
+            "id": 5,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 3,
+            "has_race": false,
+            "hidden": 0,
+            "id": 6,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 3,
+            "has_race": false,
+            "hidden": 0,
+            "id": 7,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 3,
+            "has_race": false,
+            "hidden": 0,
+            "id": 8,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 3,
+            "has_race": false,
+            "hidden": 0,
+            "id": 9,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 3,
+            "has_race": false,
+            "hidden": 0,
+            "id": 10,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 11,
+            "has_race": false,
+            "hidden": 0,
+            "id": 11,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 5,
+            "has_race": false,
+            "hidden": 0,
+            "id": 12,
+            "ontarget": false,
+            "stack": "file: /home/fjin/gitRepo/dataracebench/micro-benchmarks/DRB132-taskdep4-orig-omp45-no.c, line: 25, col: 3"
+        },
+        {
+            "active": 1,
+            "end_event": 11,
+            "has_race": false,
+            "hidden": 0,
+            "id": 13,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 5,
+            "has_race": false,
+            "hidden": 0,
+            "id": 14,
+            "ontarget": false,
+            "stack": "file: /home/fjin/gitRepo/dataracebench/micro-benchmarks/DRB132-taskdep4-orig-omp45-no.c, line: 28, col: 37"
+        },
+        {
+            "active": 1,
+            "end_event": 2,
+            "has_race": false,
+            "hidden": 0,
+            "id": 15,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 5,
+            "has_race": false,
+            "hidden": 0,
+            "id": 16,
+            "ontarget": false,
+            "stack": "file: /home/fjin/gitRepo/dataracebench/micro-benchmarks/DRB132-taskdep4-orig-omp45-no.c, line: 28, col: 37"
+        },
+        {
+            "active": 1,
+            "end_event": 11,
+            "has_race": false,
+            "hidden": 0,
+            "id": 17,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 8,
+            "has_race": false,
+            "hidden": 0,
+            "id": 18,
+            "ontarget": false,
+            "stack": "file: /home/fjin/gitRepo/dataracebench/micro-benchmarks/DRB132-taskdep4-orig-omp45-no.c, line: 33, col: 3"
+        },
+        {
+            "active": 1,
+            "end_event": 3,
+            "has_race": false,
+            "hidden": 0,
+            "id": 19,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 3,
+            "has_race": false,
+            "hidden": 0,
+            "id": 20,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 3,
+            "has_race": false,
+            "hidden": 0,
+            "id": 21,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 3,
+            "has_race": false,
+            "hidden": 0,
+            "id": 22,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 3,
+            "has_race": false,
+            "hidden": 0,
+            "id": 23,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 3,
+            "has_race": false,
+            "hidden": 0,
+            "id": 24,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 3,
+            "has_race": false,
+            "hidden": 0,
+            "id": 25,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 3,
+            "has_race": false,
+            "hidden": 0,
+            "id": 26,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 3,
+            "has_race": false,
+            "hidden": 0,
+            "id": 27,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 4,
+            "has_race": false,
+            "hidden": 0,
+            "id": 28,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 4,
+            "has_race": false,
+            "hidden": 0,
+            "id": 29,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 4,
+            "has_race": false,
+            "hidden": 0,
+            "id": 30,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 4,
+            "has_race": false,
+            "hidden": 0,
+            "id": 31,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 4,
+            "has_race": false,
+            "hidden": 0,
+            "id": 32,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 4,
+            "has_race": false,
+            "hidden": 0,
+            "id": 33,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 4,
+            "has_race": false,
+            "hidden": 0,
+            "id": 34,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 4,
+            "has_race": false,
+            "hidden": 0,
+            "id": 35,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 2,
+            "has_race": false,
+            "hidden": 0,
+            "id": 36,
+            "ontarget": false,
+            "stack": ""
+        }
+    ],
+    "races": null,
+    "targets": null
+}

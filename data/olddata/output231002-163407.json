@@ -1,0 +1,285 @@
+{
+    "directed": true,
+    "multigraph": true,
+    "graph": {
+        "node_default": {},
+        "edge_default": {}
+    },
+    "nodes": [
+        {
+            "end_event": "parallel_begin",
+            "has_race": 0,
+            "vertex_id": 1,
+            "id": "n1",
+            "active": true,
+            "hidden": false
+        },
+        {
+            "end_event": "parallel_end",
+            "has_race": 0,
+            "vertex_id": 2,
+            "id": "n2",
+            "active": true,
+            "hidden": false
+        },
+        {
+            "end_event": "parallel_begin",
+            "has_race": 0,
+            "vertex_id": 3,
+            "id": "n3",
+            "active": true,
+            "hidden": false
+        },
+        {
+            "end_event": "parallel_end",
+            "has_race": 0,
+            "vertex_id": 4,
+            "id": "n4",
+            "active": true,
+            "hidden": false
+        },
+        {
+            "end_event": "parallel_begin",
+            "has_race": 0,
+            "vertex_id": 5,
+            "id": "n5",
+            "active": true,
+            "hidden": false
+        },
+        {
+            "end_event": "parallel_end",
+            "has_race": 0,
+            "vertex_id": 6,
+            "id": "n6",
+            "active": true,
+            "hidden": false
+        },
+        {
+            "end_event": "sync_region_begin",
+            "has_race": 0,
+            "vertex_id": 7,
+            "id": "n7",
+            "active": true,
+            "hidden": false
+        },
+        {
+            "end_event": "sync_region_begin",
+            "has_race": 0,
+            "vertex_id": 8,
+            "id": "n8",
+            "active": true,
+            "hidden": false
+        },
+        {
+            "end_event": "sync_region_begin",
+            "has_race": 0,
+            "vertex_id": 9,
+            "id": "n9",
+            "active": true,
+            "hidden": false
+        },
+        {
+            "end_event": "sync_region_begin",
+            "has_race": 0,
+            "vertex_id": 10,
+            "id": "n10",
+            "active": true,
+            "hidden": false
+        },
+        {
+            "end_event": "sync_region_end",
+            "has_race": 0,
+            "vertex_id": 11,
+            "id": "n11",
+            "active": true,
+            "hidden": false
+        },
+        {
+            "end_event": "sync_region_end",
+            "has_race": 0,
+            "vertex_id": 12,
+            "id": "n12",
+            "active": true,
+            "hidden": false
+        },
+        {
+            "end_event": "sync_region_end",
+            "has_race": 0,
+            "vertex_id": 13,
+            "id": "n13",
+            "active": true,
+            "hidden": false
+        },
+        {
+            "end_event": "sync_region_end",
+            "has_race": 0,
+            "vertex_id": 14,
+            "id": "n14",
+            "active": true,
+            "hidden": false
+        },
+        {
+            "has_race": 0,
+            "vertex_id": 15,
+            "id": "n15",
+            "active": true,
+            "hidden": false
+        },
+        {
+            "has_race": 0,
+            "vertex_id": 16,
+            "id": "n16",
+            "active": true,
+            "hidden": false
+        },
+        {
+            "has_race": 0,
+            "vertex_id": 17,
+            "id": "n17",
+            "active": true,
+            "hidden": false
+        }
+    ],
+    "links": [
+        {
+            "edge_type": "CONT",
+            "source": "n1",
+            "target": "n2",
+            "key": "e25",
+            "hidden": false
+        },
+        {
+            "edge_type": "TARGET",
+            "source": "n2",
+            "target": "n3",
+            "key": "e26",
+            "hidden": false
+        },
+        {
+            "edge_type": "CONT",
+            "source": "n2",
+            "target": "n17",
+            "key": "e27",
+            "hidden": false
+        },
+        {
+            "edge_type": "CONT",
+            "source": "n3",
+            "target": "n4",
+            "key": "e28",
+            "hidden": false
+        },
+        {
+            "edge_type": "FORK_I",
+            "source": "n3",
+            "target": "n5",
+            "key": "e29",
+            "hidden": false
+        },
+        {
+            "edge_type": "CONT",
+            "source": "n4",
+            "target": "n16",
+            "key": "e30",
+            "hidden": false
+        },
+        {
+            "edge_type": "CONT",
+            "source": "n5",
+            "target": "n6",
+            "key": "e31",
+            "hidden": false
+        },
+        {
+            "edge_type": "FORK_I",
+            "source": "n5",
+            "target": "n7",
+            "key": "e32",
+            "hidden": false
+        },
+        {
+            "edge_type": "FORK_I",
+            "source": "n5",
+            "target": "n8",
+            "key": "e33",
+            "hidden": false
+        },
+        {
+            "edge_type": "FORK_I",
+            "source": "n5",
+            "target": "n10",
+            "key": "e34",
+            "hidden": false
+        },
+        {
+            "edge_type": "FORK_I",
+            "source": "n5",
+            "target": "n9",
+            "key": "e35",
+            "hidden": false
+        },
+        {
+            "edge_type": "CONT",
+            "source": "n6",
+            "target": "n15",
+            "key": "e36",
+            "hidden": false
+        },
+        {
+            "edge_type": "CONT",
+            "source": "n7",
+            "target": "n12",
+            "key": "e37",
+            "hidden": false
+        },
+        {
+            "edge_type": "CONT",
+            "source": "n8",
+            "target": "n13",
+            "key": "e38",
+            "hidden": false
+        },
+        {
+            "edge_type": "CONT",
+            "source": "n9",
+            "target": "n11",
+            "key": "e39",
+            "hidden": false
+        },
+        {
+            "edge_type": "CONT",
+            "source": "n10",
+            "target": "n14",
+            "key": "e40",
+            "hidden": false
+        },
+        {
+            "edge_type": "JOIN",
+            "source": "n11",
+            "target": "n15",
+            "key": "e41",
+            "hidden": false
+        },
+        {
+            "edge_type": "JOIN",
+            "source": "n12",
+            "target": "n15",
+            "key": "e42",
+            "hidden": false
+        },
+        {
+            "edge_type": "JOIN",
+            "source": "n13",
+            "target": "n15",
+            "key": "e43",
+            "hidden": false
+        },
+        {
+            "edge_type": "JOIN",
+            "source": "n14",
+            "target": "n15",
+            "key": "e44",
+            "hidden": false
+        }
+    ]
+}

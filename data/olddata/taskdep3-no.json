@@ -1,0 +1,681 @@
+{
+    "directed": true,
+    "multigraph": false,
+    "graph": {
+        "node_default": {},
+        "edge_default": {}
+    },
+    "nodes": [
+        {
+            "end_event": "parallel_begin",
+            "has_race": false,
+            "ontarget": false,
+            "stack": "file: /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/taskdep3-no.cpp, line: 7, col: 1",
+            "vertex_id": 1,
+            "id": "n1",
+            "active": true,
+            "hidden": false
+        },
+        {
+            "end_event": "parallel_end",
+            "has_race": false,
+            "ontarget": false,
+            "stack": "file: /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/taskdep3-no.cpp, line: 7, col: 1",
+            "vertex_id": 2,
+            "id": "n2",
+            "active": true,
+            "hidden": false
+        },
+        {
+            "end_event": "task_create",
+            "has_race": false,
+            "ontarget": false,
+            "stack": "file: /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/taskdep3-no.cpp, line: 10, col: 1",
+            "vertex_id": 3,
+            "id": "n3",
+            "active": true,
+            "hidden": false
+        },
+        {
+            "end_event": "sync_region_begin",
+            "has_race": false,
+            "ontarget": false,
+            "vertex_id": 4,
+            "id": "n4",
+            "active": true,
+            "hidden": false
+        },
+        {
+            "end_event": "sync_region_begin",
+            "has_race": false,
+            "ontarget": false,
+            "vertex_id": 5,
+            "id": "n5",
+            "active": true,
+            "hidden": false
+        },
+        {
+            "end_event": "sync_region_begin",
+            "has_race": false,
+            "ontarget": false,
+            "vertex_id": 6,
+            "id": "n6",
+            "active": true,
+            "hidden": false
+        },
+        {
+            "end_event": "sync_region_begin",
+            "has_race": false,
+            "ontarget": false,
+            "vertex_id": 7,
+            "id": "n7",
+            "active": true,
+            "hidden": false
+        },
+        {
+            "end_event": "sync_region_begin",
+            "has_race": false,
+            "ontarget": false,
+            "vertex_id": 8,
+            "id": "n8",
+            "active": true,
+            "hidden": false
+        },
+        {
+            "end_event": "sync_region_begin",
+            "has_race": false,
+            "ontarget": false,
+            "vertex_id": 9,
+            "id": "n9",
+            "active": true,
+            "hidden": false
+        },
+        {
+            "end_event": "sync_region_begin",
+            "has_race": false,
+            "ontarget": false,
+            "vertex_id": 10,
+            "id": "n10",
+            "active": true,
+            "hidden": false
+        },
+        {
+            "end_event": "task_schedule",
+            "has_race": true,
+            "ontarget": false,
+            "stack": "    #0 .omp_outlined. /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/taskdep3-no.cpp:12:9 (taskdep3-no+0xd3220)",
+            "vertex_id": 11,
+            "id": "n11",
+            "active": true,
+            "hidden": false
+        },
+        {
+            "end_event": "task_create",
+            "has_race": false,
+            "ontarget": false,
+            "stack": "file: /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/taskdep3-no.cpp, line: 14, col: 1",
+            "vertex_id": 12,
+            "id": "n12",
+            "active": true,
+            "hidden": false
+        },
+        {
+            "end_event": "task_schedule",
+            "has_race": true,
+            "ontarget": false,
+            "stack": "    #0 .omp_outlined..1 /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/taskdep3-no.cpp:15:8 (taskdep3-no+0xd32db)",
+            "vertex_id": 13,
+            "id": "n13",
+            "active": true,
+            "hidden": false
+        },
+        {
+            "end_event": "task_create",
+            "has_race": false,
+            "ontarget": false,
+            "stack": "file: /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/taskdep3-no.cpp, line: 16, col: 1",
+            "vertex_id": 14,
+            "id": "n14",
+            "active": true,
+            "hidden": false
+        },
+        {
+            "end_event": "task_schedule",
+            "has_race": true,
+            "ontarget": false,
+            "stack": "    #0 .omp_outlined..3 /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/taskdep3-no.cpp:17:8 (taskdep3-no+0xd33bb)",
+            "vertex_id": 15,
+            "id": "n15",
+            "active": true,
+            "hidden": false
+        },
+        {
+            "end_event": "sync_region_begin",
+            "has_race": false,
+            "ontarget": false,
+            "vertex_id": 16,
+            "id": "n16",
+            "active": true,
+            "hidden": false
+        },
+        {
+            "end_event": "sync_region_begin",
+            "has_race": false,
+            "ontarget": false,
+            "vertex_id": 17,
+            "id": "n17",
+            "active": true,
+            "hidden": false
+        },
+        {
+            "end_event": "sync_region_begin",
+            "has_race": false,
+            "ontarget": false,
+            "vertex_id": 18,
+            "id": "n18",
+            "active": true,
+            "hidden": false
+        },
+        {
+            "end_event": "sync_region_begin",
+            "has_race": false,
+            "ontarget": false,
+            "vertex_id": 19,
+            "id": "n19",
+            "active": true,
+            "hidden": false
+        },
+        {
+            "end_event": "sync_region_begin",
+            "has_race": false,
+            "ontarget": false,
+            "vertex_id": 20,
+            "id": "n20",
+            "active": true,
+            "hidden": false
+        },
+        {
+            "end_event": "sync_region_begin",
+            "has_race": false,
+            "ontarget": false,
+            "vertex_id": 21,
+            "id": "n21",
+            "active": true,
+            "hidden": false
+        },
+        {
+            "end_event": "sync_region_begin",
+            "has_race": false,
+            "ontarget": false,
+            "vertex_id": 22,
+            "id": "n22",
+            "active": true,
+            "hidden": false
+        },
+        {
+            "end_event": "sync_region_begin",
+            "has_race": false,
+            "ontarget": false,
+            "vertex_id": 23,
+            "id": "n23",
+            "active": true,
+            "hidden": false
+        },
+        {
+            "end_event": "sync_region_begin",
+            "has_race": false,
+            "ontarget": false,
+            "vertex_id": 24,
+            "id": "n24",
+            "active": true,
+            "hidden": false
+        },
+        {
+            "end_event": "sync_region_end",
+            "has_race": false,
+            "ontarget": false,
+            "vertex_id": 25,
+            "id": "n25",
+            "active": true,
+            "hidden": false
+        },
+        {
+            "end_event": "sync_region_end",
+            "has_race": false,
+            "ontarget": false,
+            "vertex_id": 26,
+            "id": "n26",
+            "active": true,
+            "hidden": false
+        },
+        {
+            "end_event": "sync_region_end",
+            "has_race": false,
+            "ontarget": false,
+            "vertex_id": 27,
+            "id": "n27",
+            "active": true,
+            "hidden": false
+        },
+        {
+            "end_event": "sync_region_end",
+            "has_race": false,
+            "ontarget": false,
+            "vertex_id": 28,
+            "id": "n28",
+            "active": true,
+            "hidden": false
+        },
+        {
+            "end_event": "sync_region_end",
+            "has_race": false,
+            "ontarget": false,
+            "vertex_id": 29,
+            "id": "n29",
+            "active": true,
+            "hidden": false
+        },
+        {
+            "end_event": "sync_region_end",
+            "has_race": false,
+            "ontarget": false,
+            "vertex_id": 30,
+            "id": "n30",
+            "active": true,
+            "hidden": false
+        },
+        {
+            "end_event": "sync_region_end",
+            "has_race": false,
+            "ontarget": false,
+            "vertex_id": 31,
+            "id": "n31",
+            "active": true,
+            "hidden": false
+        },
+        {
+            "end_event": "sync_region_end",
+            "has_race": false,
+            "ontarget": false,
+            "vertex_id": 32,
+            "id": "n32",
+            "active": true,
+            "hidden": false
+        },
+        {
+            "has_race": false,
+            "ontarget": false,
+            "vertex_id": 33,
+            "id": "n33",
+            "active": true,
+            "hidden": false
+        }
+    ],
+    "links": [
+        {
+            "edge_type": "CONT",
+            "id": "e0",
+            "source": "n1",
+            "target": "n2",
+            "hidden": false
+        },
+        {
+            "edge_type": "FORK_I",
+            "id": "e1",
+            "source": "n1",
+            "target": "n3",
+            "hidden": false
+        },
+        {
+            "edge_type": "FORK_I",
+            "id": "e2",
+            "source": "n1",
+            "target": "n4",
+            "hidden": false
+        },
+        {
+            "edge_type": "FORK_I",
+            "id": "e3",
+            "source": "n1",
+            "target": "n5",
+            "hidden": false
+        },
+        {
+            "edge_type": "FORK_I",
+            "id": "e4",
+            "source": "n1",
+            "target": "n6",
+            "hidden": false
+        },
+        {
+            "edge_type": "FORK_I",
+            "id": "e5",
+            "source": "n1",
+            "target": "n8",
+            "hidden": false
+        },
+        {
+            "edge_type": "FORK_I",
+            "id": "e6",
+            "source": "n1",
+            "target": "n7",
+            "hidden": false
+        },
+        {
+            "edge_type": "FORK_I",
+            "id": "e7",
+            "source": "n1",
+            "target": "n9",
+            "hidden": false
+        },
+        {
+            "edge_type": "FORK_I",
+            "id": "e8",
+            "source": "n1",
+            "target": "n10",
+            "hidden": false
+        },
+        {
+            "edge_type": "CONT",
+            "id": "e9",
+            "source": "n2",
+            "target": "n33",
+            "hidden": false
+        },
+        {
+            "edge_type": "FORK_E",
+            "id": "e10",
+            "source": "n3",
+            "target": "n11",
+            "hidden": false
+        },
+        {
+            "edge_type": "CONT",
+            "id": "e11",
+            "source": "n3",
+            "target": "n12",
+            "hidden": false
+        },
+        {
+            "edge_type": "CONT",
+            "id": "e12",
+            "source": "n4",
+            "target": "n20",
+            "hidden": false
+        },
+        {
+            "edge_type": "CONT",
+            "id": "e13",
+            "source": "n5",
+            "target": "n18",
+            "hidden": false
+        },
+        {
+            "edge_type": "CONT",
+            "id": "e14",
+            "source": "n6",
+            "target": "n19",
+            "hidden": false
+        },
+        {
+            "edge_type": "CONT",
+            "id": "e15",
+            "source": "n7",
+            "target": "n23",
+            "hidden": false
+        },
+        {
+            "edge_type": "CONT",
+            "id": "e16",
+            "source": "n8",
+            "target": "n22",
+            "hidden": false
+        },
+        {
+            "edge_type": "CONT",
+            "id": "e17",
+            "source": "n9",
+            "target": "n21",
+            "hidden": false
+        },
+        {
+            "edge_type": "CONT",
+            "id": "e18",
+            "source": "n10",
+            "target": "n24",
+            "hidden": false
+        },
+        {
+            "edge_type": "JOIN_E",
+            "id": "e19",
+            "source": "n11",
+            "target": "n15",
+            "hidden": false
+        },
+        {
+            "edge_type": "JOIN_E",
+            "id": "e20",
+            "source": "n11",
+            "target": "n13",
+            "hidden": false
+        },
+        {
+            "edge_type": "BARRIER",
+            "id": "e21",
+            "source": "n11",
+            "target": "n17",
+            "hidden": false
+        },
+        {
+            "edge_type": "FORK_E",
+            "id": "e22",
+            "source": "n12",
+            "target": "n13",
+            "hidden": false
+        },
+        {
+            "edge_type": "CONT",
+            "id": "e23",
+            "source": "n12",
+            "target": "n14",
+            "hidden": false
+        },
+        {
+            "edge_type": "BARRIER",
+            "id": "e24",
+            "source": "n13",
+            "target": "n17",
+            "hidden": false
+        },
+        {
+            "edge_type": "FORK_E",
+            "id": "e25",
+            "source": "n14",
+            "target": "n15",
+            "hidden": false
+        },
+        {
+            "edge_type": "CONT",
+            "id": "e26",
+            "source": "n14",
+            "target": "n16",
+            "hidden": false
+        },
+        {
+            "edge_type": "BARRIER",
+            "id": "e27",
+            "source": "n15",
+            "target": "n17",
+            "hidden": false
+        },
+        {
+            "edge_type": "CONT",
+            "id": "e28",
+            "source": "n16",
+            "target": "n17",
+            "hidden": false
+        },
+        {
+            "edge_type": "CONT",
+            "id": "e29",
+            "source": "n17",
+            "target": "n32",
+            "hidden": false
+        },
+        {
+            "edge_type": "BARRIER",
+            "id": "e30",
+            "source": "n18",
+            "target": "n17",
+            "hidden": false
+        },
+        {
+            "edge_type": "CONT",
+            "id": "e31",
+            "source": "n18",
+            "target": "n30",
+            "hidden": false
+        },
+        {
+            "edge_type": "BARRIER",
+            "id": "e32",
+            "source": "n19",
+            "target": "n17",
+            "hidden": false
+        },
+        {
+            "edge_type": "CONT",
+            "id": "e33",
+            "source": "n19",
+            "target": "n28",
+            "hidden": false
+        },
+        {
+            "edge_type": "BARRIER",
+            "id": "e34",
+            "source": "n20",
+            "target": "n17",
+            "hidden": false
+        },
+        {
+            "edge_type": "CONT",
+            "id": "e35",
+            "source": "n20",
+            "target": "n25",
+            "hidden": false
+        },
+        {
+            "edge_type": "BARRIER",
+            "id": "e36",
+            "source": "n21",
+            "target": "n17",
+            "hidden": false
+        },
+        {
+            "edge_type": "CONT",
+            "id": "e37",
+            "source": "n21",
+            "target": "n26",
+            "hidden": false
+        },
+        {
+            "edge_type": "BARRIER",
+            "id": "e38",
+            "source": "n22",
+            "target": "n17",
+            "hidden": false
+        },
+        {
+            "edge_type": "CONT",
+            "id": "e39",
+            "source": "n22",
+            "target": "n31",
+            "hidden": false
+        },
+        {
+            "edge_type": "BARRIER",
+            "id": "e40",
+            "source": "n23",
+            "target": "n17",
+            "hidden": false
+        },
+        {
+            "edge_type": "CONT",
+            "id": "e41",
+            "source": "n23",
+            "target": "n27",
+            "hidden": false
+        },
+        {
+            "edge_type": "BARRIER",
+            "id": "e42",
+            "source": "n24",
+            "target": "n17",
+            "hidden": false
+        },
+        {
+            "edge_type": "CONT",
+            "id": "e43",
+            "source": "n24",
+            "target": "n29",
+            "hidden": false
+        },
+        {
+            "edge_type": "JOIN",
+            "id": "e44",
+            "source": "n25",
+            "target": "n33",
+            "hidden": false
+        },
+        {
+            "edge_type": "JOIN",
+            "id": "e45",
+            "source": "n26",
+            "target": "n33",
+            "hidden": false
+        },
+        {
+            "edge_type": "JOIN",
+            "id": "e46",
+            "source": "n27",
+            "target": "n33",
+            "hidden": false
+        },
+        {
+            "edge_type": "JOIN",
+            "id": "e47",
+            "source": "n28",
+            "target": "n33",
+            "hidden": false
+        },
+        {
+            "edge_type": "JOIN",
+            "id": "e48",
+            "source": "n29",
+            "target": "n33",
+            "hidden": false
+        },
+        {
+            "edge_type": "JOIN",
+            "id": "e49",
+            "source": "n30",
+            "target": "n33",
+            "hidden": false
+        },
+        {
+            "edge_type": "JOIN",
+            "id": "e50",
+            "source": "n31",
+            "target": "n33",
+            "hidden": false
+        },
+        {
+            "edge_type": "JOIN",
+            "id": "e51",
+            "source": "n32",
+            "target": "n33",
+            "hidden": false
+        }
+    ],
+    "target": []
+}

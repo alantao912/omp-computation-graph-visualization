@@ -1,0 +1,287 @@
+{
+    "edges": [
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 1,
+            "target": 2
+        },
+        {
+            "edge_type": 1,
+            "hidden": 0,
+            "source": 1,
+            "target": 3
+        },
+        {
+            "edge_type": 1,
+            "hidden": 0,
+            "source": 1,
+            "target": 4
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 2,
+            "target": 15
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 3,
+            "target": 5
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 4,
+            "target": 6
+        },
+        {
+            "edge_type": 2,
+            "hidden": 0,
+            "source": 5,
+            "target": 9
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 5,
+            "target": 10
+        },
+        {
+            "edge_type": 5,
+            "hidden": 0,
+            "source": 6,
+            "target": 5
+        },
+        {
+            "edge_type": 2,
+            "hidden": 0,
+            "source": 6,
+            "target": 7
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 6,
+            "target": 8
+        },
+        {
+            "edge_type": 3,
+            "hidden": 0,
+            "source": 7,
+            "target": 11
+        },
+        {
+            "edge_type": 3,
+            "hidden": 0,
+            "source": 7,
+            "target": 15
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 8,
+            "target": 11
+        },
+        {
+            "edge_type": 3,
+            "hidden": 0,
+            "source": 9,
+            "target": 12
+        },
+        {
+            "edge_type": 3,
+            "hidden": 0,
+            "source": 9,
+            "target": 15
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 10,
+            "target": 12
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 11,
+            "target": 14
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 12,
+            "target": 13
+        },
+        {
+            "edge_type": 3,
+            "hidden": 0,
+            "source": 13,
+            "target": 15
+        },
+        {
+            "edge_type": 3,
+            "hidden": 0,
+            "source": 14,
+            "target": 15
+        }
+    ],
+    "files": {
+        "/home/fjin/playground/survey/q7.c": "#include <stdio.h>\n#include <omp.h>\n\nint main()\n{\n  int result = 0;\n  #pragma omp parallel num_threads(2) shared(result)\n  {\n    int result2 = 0;\n    #pragma omp single\n    {\n      result = 10;\n    }\n\n    #pragma omp task\n    {\n      result2 = omp_get_thread_num();\n    }\n\n    result = result2;\n\n    #pragma omp taskwait\n     \n    result2 = result;\n  }\n\n  printf(\"result = %d\\n\", result);\n}\n"
+    },
+    "nodes": [
+        {
+            "active": 1,
+            "end_event": 0,
+            "has_race": false,
+            "hidden": 0,
+            "id": 1,
+            "ontarget": false,
+            "stack": "file: /home/fjin/playground/survey/q7.c, line: 7, col: 3"
+        },
+        {
+            "active": 1,
+            "end_event": 1,
+            "has_race": false,
+            "hidden": 0,
+            "id": 2,
+            "ontarget": false,
+            "stack": "file: /home/fjin/playground/survey/q7.c, line: 7, col: 3"
+        },
+        {
+            "active": 1,
+            "end_event": 3,
+            "has_race": false,
+            "hidden": 0,
+            "id": 3,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 3,
+            "has_race": false,
+            "hidden": 0,
+            "id": 4,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 5,
+            "has_race": false,
+            "hidden": 0,
+            "id": 5,
+            "ontarget": false,
+            "stack": "file: /home/fjin/playground/survey/q7.c, line: 15, col: 5"
+        },
+        {
+            "active": 1,
+            "end_event": 5,
+            "has_race": false,
+            "hidden": 0,
+            "id": 6,
+            "ontarget": false,
+            "stack": "file: /home/fjin/playground/survey/q7.c, line: 15, col: 5"
+        },
+        {
+            "active": 1,
+            "end_event": 11,
+            "has_race": false,
+            "hidden": 0,
+            "id": 7,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 8,
+            "has_race": true,
+            "hidden": 0,
+            "id": 8,
+            "ontarget": false,
+            "stack": "file: /home/fjin/playground/survey/q7.c, line: 22, col: 5"
+        },
+        {
+            "active": 1,
+            "end_event": 11,
+            "has_race": false,
+            "hidden": 0,
+            "id": 9,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 8,
+            "has_race": true,
+            "hidden": 0,
+            "id": 10,
+            "ontarget": false,
+            "stack": "file: /home/fjin/playground/survey/q7.c, line: 22, col: 5"
+        },
+        {
+            "active": 1,
+            "end_event": 3,
+            "has_race": false,
+            "hidden": 0,
+            "id": 11,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 3,
+            "has_race": true,
+            "hidden": 0,
+            "id": 12,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 4,
+            "has_race": false,
+            "hidden": 0,
+            "id": 13,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 4,
+            "has_race": false,
+            "hidden": 0,
+            "id": 14,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 2,
+            "has_race": false,
+            "hidden": 0,
+            "id": 15,
+            "ontarget": false,
+            "stack": ""
+        }
+    ],
+    "races": [
+        {
+            "current": 10,
+            "current_stack": "    #0 .omp_outlined._debug__ /home/fjin/playground/survey/q7.c:20:12 (q7+0xd0fe2)",
+            "lca": 0,
+            "prev": 8,
+            "prev_stack": "    #0 .omp_outlined._debug__ /home/fjin/playground/survey/q7.c:20:12 (q7+0xd0fe2)"
+        },
+        {
+            "current": 12,
+            "current_stack": "    #0 .omp_outlined._debug__ /home/fjin/playground/survey/q7.c:24:15 (q7+0xd1003)",
+            "lca": 0,
+            "prev": 8,
+            "prev_stack": "    #0 .omp_outlined._debug__ /home/fjin/playground/survey/q7.c:20:12 (q7+0xd0fe2)"
+        }
+    ],
+    "targets": null
+}

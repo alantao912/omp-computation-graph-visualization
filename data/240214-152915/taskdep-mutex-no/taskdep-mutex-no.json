@@ -1,0 +1,399 @@
+{
+    "edges": [
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 1,
+            "target": 2
+        },
+        {
+            "edge_type": 1,
+            "hidden": 0,
+            "source": 1,
+            "target": 3
+        },
+        {
+            "edge_type": 1,
+            "hidden": 0,
+            "source": 1,
+            "target": 4
+        },
+        {
+            "edge_type": 1,
+            "hidden": 0,
+            "source": 1,
+            "target": 5
+        },
+        {
+            "edge_type": 1,
+            "hidden": 0,
+            "source": 1,
+            "target": 7
+        },
+        {
+            "edge_type": 1,
+            "hidden": 0,
+            "source": 1,
+            "target": 8
+        },
+        {
+            "edge_type": 1,
+            "hidden": 0,
+            "source": 1,
+            "target": 6
+        },
+        {
+            "edge_type": 1,
+            "hidden": 0,
+            "source": 1,
+            "target": 9
+        },
+        {
+            "edge_type": 1,
+            "hidden": 0,
+            "source": 1,
+            "target": 10
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 2,
+            "target": 39
+        },
+        {
+            "edge_type": 2,
+            "hidden": 0,
+            "source": 3,
+            "target": 11
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 3,
+            "target": 12
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 4,
+            "target": 29
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 5,
+            "target": 27
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 6,
+            "target": 26
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 7,
+            "target": 24
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 8,
+            "target": 25
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 9,
+            "target": 28
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 10,
+            "target": 30
+        },
+        {
+            "edge_type": 4,
+            "hidden": 0,
+            "source": 11,
+            "target": 17
+        },
+        {
+            "edge_type": 2,
+            "hidden": 0,
+            "source": 12,
+            "target": 13
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 12,
+            "target": 14
+        },
+        {
+            "edge_type": 4,
+            "hidden": 0,
+            "source": 13,
+            "target": 17
+        },
+        {
+            "edge_type": 5,
+            "hidden": 0,
+            "source": 13,
+            "target": 23
+        },
+        {
+            "edge_type": 2,
+            "hidden": 0,
+            "source": 14,
+            "target": 15
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 14,
+            "target": 16
+        },
+        {
+            "edge_type": 4,
+            "hidden": 0,
+            "source": 15,
+            "target": 19
+        },
+        {
+            "edge_type": 2,
+            "hidden": 0,
+            "source": 16,
+            "target": 17
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 16,
+            "target": 18
+        },
+        {
+            "edge_type": 4,
+            "hidden": 0,
+            "source": 17,
+            "target": 19
+        },
+        {
+            "edge_type": 5,
+            "hidden": 0,
+            "source": 17,
+            "target": 23
+        },
+        {
+            "edge_type": 2,
+            "hidden": 0,
+            "source": 18,
+            "target": 19
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 18,
+            "target": 20
+        },
+        {
+            "edge_type": 4,
+            "hidden": 0,
+            "source": 19,
+            "target": 21
+        },
+        {
+            "edge_type": 5,
+            "hidden": 0,
+            "source": 19,
+            "target": 23
+        },
+        {
+            "edge_type": 2,
+            "hidden": 0,
+            "source": 20,
+            "target": 21
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 20,
+            "target": 22
+        },
+        {
+            "edge_type": 5,
+            "hidden": 0,
+            "source": 21,
+            "target": 23
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 22,
+            "target": 23
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 23,
+            "target": 31
+        },
+        {
+            "edge_type": 5,
+            "hidden": 0,
+            "source": 24,
+            "target": 23
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 24,
+            "target": 35
+        },
+        {
+            "edge_type": 5,
+            "hidden": 0,
+            "source": 25,
+            "target": 23
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 25,
+            "target": 33
+        },
+        {
+            "edge_type": 5,
+            "hidden": 0,
+            "source": 26,
+            "target": 23
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 26,
+            "target": 32
+        },
+        {
+            "edge_type": 5,
+            "hidden": 0,
+            "source": 27,
+            "target": 23
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 27,
+            "target": 36
+        },
+        {
+            "edge_type": 5,
+            "hidden": 0,
+            "source": 28,
+            "target": 23
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 28,
+            "target": 34
+        },
+        {
+            "edge_type": 5,
+            "hidden": 0,
+            "source": 29,
+            "target": 23
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 29,
+            "target": 37
+        },
+        {
+            "edge_type": 5,
+            "hidden": 0,
+            "source": 30,
+            "target": 23
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 30,
+            "target": 38
+        },
+        {
+            "edge_type": 3,
+            "hidden": 0,
+            "source": 31,
+            "target": 39
+        },
+        {
+            "edge_type": 3,
+            "hidden": 0,
+            "source": 32,
+            "target": 39
+        },
+        {
+            "edge_type": 3,
+            "hidden": 0,
+            "source": 33,
+            "target": 39
+        },
+        {
+            "edge_type": 3,
+            "hidden": 0,
+            "source": 34,
+            "target": 39
+        },
+        {
+            "edge_type": 3,
+            "hidden": 0,
+            "source": 35,
+            "target": 39
+        },
+        {
+            "edge_type": 3,
+            "hidden": 0,
+            "source": 36,
+            "target": 39
+        },
+        {
+            "edge_type": 3,
+            "hidden": 0,
+            "source": 37,
+            "target": 39
+        },
+        {
+            "edge_type": 3,
+            "hidden": 0,
+            "source": 38,
+            "target": 39
+        }
+    ],
+    "files": {
+        "/home/fjin/gitRepo/dataracebench/micro-benchmarks/example/taskdep-mutex-no.cpp": "#include <stdio.h>\n#include <omp.h>\n\nint main(){\n  int a, b, c, d;\n\n  #pragma omp parallel\n  #pragma omp single\n  {\n    #pragma omp task depend(out: c)\n      c = 1;\n    #pragma omp task depend(out: a)\n      a = 2;\n    #pragma omp task depend(out: b)\n      b = 3;\n    #pragma omp task depend(in: a) depend(mutexinoutset: c)\n      c += a;\n    #pragma omp task depend(in: b) depend(mutexinoutset: c)\n      c += b;\n    #pragma omp task depend(in: c)\n      d = c;\n  }\n\n  printf(\"%d\\n\",d);\n  return 0;\n}\n"
+    },
+    "nodes": [
+        null,
+        ,
+        ,
+        null,
+        null
+    ],
+    "races": [
+        {
+            "current": 19,
+            "lca": 0,
+            "prev": 15
+        },
+        {
+            "current": 17,
+            "lca": 0,
+            "prev": 13
+        }
+    ],
+    "targets": null
+}

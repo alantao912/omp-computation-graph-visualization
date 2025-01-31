@@ -1,0 +1,255 @@
+.unselectable-text {
+    user-select: none;
+}
+
+#page-layout {
+  display: flex;
+  flex-direction: column;
+
+  max-height: 100vh;
+}
+
+.title-display {
+  display: flex;
+  flex-direction: horizontal;
+  justify-content: center;
+
+  max-height: 15vh;
+}
+
+
+.main-display {
+  justify-content: center;
+  display: flex;
+
+  max-height: 70vh;
+}
+
+.graph-display {
+  width: 40%;
+  overflow-x: scroll;
+  overflow-y: scroll;
+
+  padding: 5px;
+  margin: 5px;
+
+  border-style: solid;
+  border-color: transparent;
+  border-width: 3px;
+  border-radius: 15px;
+}
+
+#memory-vis-display-legend-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.source-code-wrapper-class {
+  width: 30%;
+  overflow-x: scroll;
+  overflow-y: scroll;
+
+  padding: 5px;
+  margin: 5px;
+
+  border-style: solid;
+  border-color: transparent;
+  border-width: 3px;
+  border-radius: 15px;
+
+  font-size: 15px;
+  font-family: monospace; 
+  color: black;
+}
+
+.source-code-display-class {
+  width: 100%;
+  height: 100%;
+  border: none;
+  scrollbar-color: transparent;
+  background-color: transparent;
+  resize: none;
+}
+
+.sidebar-display {
+  flex-direction: column;
+  display: flex;
+  width: 30%;
+}
+
+#page-layout {
+  display: flex;
+  flex-direction: column;
+}
+
+#host-display {
+  text-align: center;
+  width: 50%;
+  opacity: 0;
+}
+
+#target-display {
+  text-align: center;
+  width: 50%;
+  opacity: 0;
+}
+
+#memory-vis {
+  border-width: 2px;
+  border-radius: 15px;
+  border-color: black;
+
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+}
+
+#memory-vis-header {
+  text-align: center;
+  font-family: 'Arial';
+  opacity: 0;
+}
+
+#header-text {
+  display: flex;
+  flex-direction: row;
+}
+
+#memory-vis-header {
+  height: 65px;
+}
+
+#memory-vis-header-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+#memory-vis-header-subheading {
+  display: flex;
+  flex-direction: row;
+}
+
+#memory-vis-header-host {
+  text-align: center;
+  justify-content: center;
+  width: 35%;
+
+  opacity: 0;
+}
+
+#memory-vis-header-target {
+  text-align: center;
+  justify-content: center;
+  width: 35%;
+
+  opacity: 0;
+}
+
+#memory-vis-header-gap {
+  width: 30%;
+}
+
+#memory-vis-display-wrapper {
+  width: 100%;
+  height: 100%;
+  
+  overflow-x: scroll;
+  overflow-y: scroll;
+  scrollbar-base-color: black;
+}
+
+#memory-vis-display {
+  padding: 10px;
+}
+
+#footer-upper {
+  display: flex;
+  flex-direction: row;
+  max-height: 15vh;
+  min-height: 150px;
+}
+
+#footer {
+  display: flex;
+  flex-direction: column;
+}
+
+#footer-lower {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  justify-content: center;
+}
+
+.upload-button {
+
+}
+
+#race-buttons {
+  display: flex;
+  flex-direction: row;
+}
+
+.examples-button {
+  min-width: 100px;
+  padding: 4px;
+  background-color: limegreen;
+  border-radius: 5px;
+  border-style: hidden;
+}
+
+.lengend-regions{
+  display: flex;
+  flex-direction: row;
+}
+
+#button-region{
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+}
+
+#data-race-buttons {
+  display: flex;
+  flex-direction: column;
+
+  max-height: 200px;
+  overflow: auto;
+}
+
+#data-upload-region {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 10px;
+  width: 5%;
+  margin-right: 1%;
+}
+
+#tooltip{
+  margin-left: 5%;
+  width: 50%;
+}
+
+h1 {
+  font-family: "Arial", sans-serif;
+  font-size: 36px;
+  font-weight: bold;
+  text-transform: uppercase;
+  background-image: linear-gradient(to right, #1293f5, #cefe0bd5); /* Gradient background */
+  -webkit-background-clip: text; /* Apply background to text */
+  background-clip: text;
+  -webkit-text-fill-color: transparent; /* Make text color transparent */
+  /* text-shadow: 2px 2px 4px rgba(12, 175, 245, 0.3); */
+}
+
+.colored-text {
+  color: yellow; /* Text color */
+  background-color: black; /* Background color (example: orange) */
+  padding: 2px 4px; /* Padding for the background */
+  border-radius: 4px; /* Rounded corners */
+  font-weight: bold; /* Bold font */
+}

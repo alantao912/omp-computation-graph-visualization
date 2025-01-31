@@ -1,0 +1,130 @@
+{
+    "edges": [
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 1,
+            "target": 2
+        },
+        {
+            "edge_type": 1,
+            "hidden": 0,
+            "source": 1,
+            "target": 3
+        },
+        {
+            "edge_type": 1,
+            "hidden": 0,
+            "source": 1,
+            "target": 4
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 2,
+            "target": 7
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 3,
+            "target": 6
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 4,
+            "target": 5
+        },
+        {
+            "edge_type": 3,
+            "hidden": 0,
+            "source": 5,
+            "target": 7
+        },
+        {
+            "edge_type": 3,
+            "hidden": 0,
+            "source": 6,
+            "target": 7
+        }
+    ],
+    "files": {
+        "/home/fjin/playground/dataracebench/micro-benchmarks/DRB182-atomic3-no.c": "/*\n!!!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~!!!\n!!! Copyright (c) 2017-20, Lawrence Livermore National Security, LLC\n!!! and DataRaceBench project contributors. See the DataRaceBench/COPYRIGHT file for details.\n!!!\n!!! SPDX-License-Identifier: (BSD-3-Clause)\n!!!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~!!!\n */\n\n#include <stdio.h>\n/*\n * This is a program based on a dataset contributed by \n * Wenhao Wu and Stephen F. Siegel @Univ. of Delaware.\n \n * sync with busy wait loop using atomic. No data race pair.\n */\nint main()\n{\n  int x = 0, s = 0;\n#pragma omp parallel sections shared(x, s) num_threads(2)\n  {\n#pragma omp section\n    {\n      x = 1;\n#pragma omp atomic write seq_cst\n      s = 1;\n    }\n#pragma omp section\n    {\n      int done = 0;\n      while (!done)\n      {\n#pragma omp atomic read seq_cst\n        done = s;\n      }\n      x = 2;\n    }\n  }\n  printf(\"%d\\n\", x);\n}\n"
+    },
+    "nodes": [
+        {
+            "active": 1,
+            "end_event": 0,
+            "has_race": false,
+            "hidden": 0,
+            "id": 1,
+            "ontarget": false,
+            "stack": "file: /home/fjin/playground/dataracebench/micro-benchmarks/DRB182-atomic3-no.c, line: 20, col: 1"
+        },
+        {
+            "active": 1,
+            "end_event": 1,
+            "has_race": false,
+            "hidden": 0,
+            "id": 2,
+            "ontarget": false,
+            "stack": "file: /home/fjin/playground/dataracebench/micro-benchmarks/DRB182-atomic3-no.c, line: 20, col: 1"
+        },
+        {
+            "active": 1,
+            "end_event": 3,
+            "has_race": true,
+            "hidden": 0,
+            "id": 3,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 3,
+            "has_race": true,
+            "hidden": 0,
+            "id": 4,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 4,
+            "has_race": false,
+            "hidden": 0,
+            "id": 5,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 4,
+            "has_race": false,
+            "hidden": 0,
+            "id": 6,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 2,
+            "has_race": false,
+            "hidden": 0,
+            "id": 7,
+            "ontarget": false,
+            "stack": ""
+        }
+    ],
+    "races": [
+        {
+            "current": 4,
+            "current_stack": "/home/fjin/playground/dataracebench/micro-benchmarks/DRB182-atomic3-no.c:36:",
+            "lca": 0,
+            "prev": 3,
+            "prev_stack": ""
+        }
+    ],
+    "targets": null
+}

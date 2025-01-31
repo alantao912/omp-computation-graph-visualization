@@ -1,0 +1,125 @@
+{
+    "edges": [
+        {
+            "edge_type": 2,
+            "hidden": 0,
+            "source": 1,
+            "target": 2
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 1,
+            "target": 3
+        },
+        {
+            "edge_type": 2,
+            "hidden": 0,
+            "source": 2,
+            "target": 4
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 2,
+            "target": 5
+        },
+        {
+            "edge_type": 2,
+            "hidden": 0,
+            "source": 4,
+            "target": 6
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 4,
+            "target": 7
+        }
+    ],
+    "files": {
+        "/home/fjin/gitRepo/dataracebench/micro-benchmarks/DRB127-tasking-threadprivate1-orig-no.c": "/*\n!!!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~!!!\n!!! Copyright (c) 2017-20, Lawrence Livermore National Security, LLC\n!!! and DataRaceBench project contributors. See the DataRaceBench/COPYRIGHT file for details.\n!!!\n!!! SPDX-License-Identifier: (BSD-3-Clause)\n!!!~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~!!!\n */\n\n/* This example is referred from OpenMP Application Programming Interface 5.0, example tasking.7.c\n * A task switch may occur at a task scheduling point. A single thread may execute both of the\n * task regions that modify tp. The parts of these task regions in which tp is modified may be\n * executed in any order so the resulting value of var can be either 1 or 2.\n * There is a  Race pair var@34:7 and var@34:7 but no data race. \n */\n\n\n#include <omp.h>\n#include <stdio.h>\n\nint tp;\n#pragma omp threadprivate(tp)\nint var;\n\nint main(){\n  #pragma omp task\n  {\n    #pragma omp task\n    {\n      tp = 1;\n      #pragma omp task\n      {\n      }\n      var = tp;\n    }\n    tp=2;\n  }\n\n  if(var==2) printf(\"%d\\n\",var);\n  return 0;\n}\n"
+    },
+    "nodes": [
+        {
+            "active": 1,
+            "end_event": 5,
+            "has_race": false,
+            "hidden": 0,
+            "id": 1,
+            "ontarget": false,
+            "stack": "file: /home/fjin/gitRepo/dataracebench/micro-benchmarks/DRB127-tasking-threadprivate1-orig-no.c, line: 26, col: 3"
+        },
+        {
+            "active": 1,
+            "end_event": 5,
+            "has_race": false,
+            "hidden": 0,
+            "id": 2,
+            "ontarget": false,
+            "stack": "file: /home/fjin/gitRepo/dataracebench/micro-benchmarks/DRB127-tasking-threadprivate1-orig-no.c, line: 28, col: 5"
+        },
+        {
+            "active": 1,
+            "end_event": 2,
+            "has_race": true,
+            "hidden": 0,
+            "id": 3,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 5,
+            "has_race": true,
+            "hidden": 0,
+            "id": 4,
+            "ontarget": false,
+            "stack": "file: /home/fjin/gitRepo/dataracebench/micro-benchmarks/DRB127-tasking-threadprivate1-orig-no.c, line: 31, col: 7"
+        },
+        {
+            "active": 1,
+            "end_event": 11,
+            "has_race": true,
+            "hidden": 0,
+            "id": 5,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 11,
+            "has_race": false,
+            "hidden": 0,
+            "id": 6,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 11,
+            "has_race": true,
+            "hidden": 0,
+            "id": 7,
+            "ontarget": false,
+            "stack": ""
+        }
+    ],
+    "races": [
+        {
+            "current": 5,
+            "current_stack": "    #0 .omp_outlined. /home/fjin/gitRepo/dataracebench/micro-benchmarks/DRB127-tasking-threadprivate1-orig-no.c:36:7 (DRB127-tasking-threadprivate1-orig-no+0xd1a43)",
+            "lca": 0,
+            "prev": 4,
+            "prev_stack": "    #0 .omp_outlined. /home/fjin/gitRepo/dataracebench/micro-benchmarks/DRB127-tasking-threadprivate1-orig-no.c:36:7 (DRB127-tasking-threadprivate1-orig-no+0xd1a43)"
+        },
+        {
+            "current": 3,
+            "current_stack": "    #0 .omp_outlined..1 /home/fjin/gitRepo/dataracebench/micro-benchmarks/DRB127-tasking-threadprivate1-orig-no.c:34:11 (DRB127-tasking-threadprivate1-orig-no+0xd1959)",
+            "lca": 0,
+            "prev": 7,
+            "prev_stack": "    #0 main /home/fjin/gitRepo/dataracebench/micro-benchmarks/DRB127-tasking-threadprivate1-orig-no.c:39:6 (DRB127-tasking-threadprivate1-orig-no+0xd1798)"
+        }
+    ],
+    "targets": null
+}

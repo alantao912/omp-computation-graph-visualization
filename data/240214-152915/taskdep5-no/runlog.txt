@@ -1,0 +1,56 @@
+Taskracer detects TSAN runtime, carrying out race detection using DPST
+Computation Graph recording enabled
+[implicit_task] initial task begin 
+[parallel_begin] file: /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/taskdep5-no.cpp, line: 24, col: 3 
+[task_create] file: /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/taskdep5-no.cpp, line: 7, col: 3 
+[task_create] file: /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/taskdep5-no.cpp, line: 10, col: 3 
+[task_create] file: /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/taskdep5-no.cpp, line: 13, col: 37 
+[task_schedule] next task starting node 11 
+[task_schedule] previous task end node 11 @@@ [task_schedule] next task starting node 16 
+[task_create] file: /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/taskdep5-no.cpp, line: 13, col: 37 
+[task_schedule] next task starting node 17 
+[task_schedule] previous task end node 17 @@@ [task_schedule] next task starting node 18 
+x=1
+[task_schedule] next task starting node 13 
+[task_schedule] previous task end node 13 @@@ [task_schedule] next task starting node 18 
+y=1
+[parallel_end] current node is 2, requested parallelsim is 8, [parallel_end] file: /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/taskdep5-no.cpp, line: 28, col: 3 
+[implicit_task] initial task end, parallel region is (nil), current step is 36 
+filePath /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/taskdep5-no.cpp 
+JSON data written to 'data/rawgraphml.json'
+
+ 
+ConcurrencyVector constructor, capacity is 200000000 
+Example of tsan interface (__tsan_print) 
+LLVMSymbolizer: error reading file: No such file or directory
+==================
+WARNING: ThreadSanitizer: data race (pid=16022)
+  Read of size 4 at 0x7ffe5032277c by main thread:
+    #0 foo() /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/taskdep5-no.cpp:16:19 (taskdep5-no+0xd3cd3)
+
+  Previous write of size 4 at 0x7ffe5032277c by main thread:
+    #0 .omp_outlined. /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/taskdep5-no.cpp:8:4 (taskdep5-no+0xd3de8)
+
+  Location is stack of main thread.
+
+  Location is global '??' at 0x7ffe50304000 ([stack]+0x1e77c)
+
+SUMMARY: ThreadSanitizer: data race /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/taskdep5-no.cpp:16:19 in foo()
+==================
+Racy access at /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/taskdep5-no.cpp:16
+==================
+WARNING: ThreadSanitizer: data race (pid=16022)
+  Read of size 4 at 0x7ffe5032277c by main thread:
+    #0 .omp_outlined..1 /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/taskdep5-no.cpp:11:9 (taskdep5-no+0xd3ed9)
+
+  Previous write of size 4 at 0x7ffe5032277c by main thread:
+    #0 .omp_outlined. /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/taskdep5-no.cpp:8:4 (taskdep5-no+0xd3de8)
+
+  Location is stack of main thread.
+
+  Location is global '??' at 0x7ffe50304000 ([stack]+0x1e77c)
+
+SUMMARY: ThreadSanitizer: data race /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/taskdep5-no.cpp:11:9 in .omp_outlined..1
+==================
+Racy access at /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/taskdep5-no.cpp:11
+ThreadSanitizer: reported 2 warnings

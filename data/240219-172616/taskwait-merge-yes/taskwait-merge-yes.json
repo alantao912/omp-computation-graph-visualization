@@ -1,0 +1,71 @@
+{
+    "edges": [
+        {
+            "edge_type": 2,
+            "hidden": 0,
+            "source": 1,
+            "target": 2
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 1,
+            "target": 3
+        },
+        {
+            "edge_type": 3,
+            "hidden": 0,
+            "source": 2,
+            "target": 4
+        },
+        {
+            "edge_type": 0,
+            "hidden": 0,
+            "source": 3,
+            "target": 4
+        }
+    ],
+    "files": {
+        "/home/fjin/gitRepo/dataracebench/micro-benchmarks/example/taskwait-merge-yes.cpp": "#include <omp.h>\n#include <stdio.h>\n\n\nint main(){\n  int x = 2;\n\n  #pragma omp task mergeable\n  {\n    x++;\n  }\n  #pragma omp taskwait\n\n  printf(\"x is %d \\n\",x);\n  return 0;\n}\n"
+    },
+    "nodes": [
+        {
+            "active": 1,
+            "end_event": 5,
+            "has_race": false,
+            "hidden": 0,
+            "id": 1,
+            "ontarget": false,
+            "stack": "file: /home/fjin/gitRepo/dataracebench/micro-benchmarks/example/taskwait-merge-yes.cpp, line: 8, col: 3"
+        },
+        {
+            "active": 1,
+            "end_event": 11,
+            "has_race": false,
+            "hidden": 0,
+            "id": 2,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 8,
+            "has_race": false,
+            "hidden": 0,
+            "id": 3,
+            "ontarget": false,
+            "stack": ""
+        },
+        {
+            "active": 1,
+            "end_event": 2,
+            "has_race": false,
+            "hidden": 0,
+            "id": 4,
+            "ontarget": false,
+            "stack": ""
+        }
+    ],
+    "races": null,
+    "targets": null
+}
